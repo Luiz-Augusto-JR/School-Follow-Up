@@ -4,16 +4,7 @@ const {
 } = require('sequelize');
 const bcrypt = require("bcrypt");
 module.exports = (sequelize, DataTypes) => {
-  class Aluno extends Model {    
-    static associate(models) {
-      this.belongsTo(models.Escola, { foreignKey: "id_escola" });
-    }
-  };
   Aluno.init({
-    matricula: {
-      type: DataTypes.INTEGER,
-      allowNull: false
-    },
     nome: {
       type: DataTypes.STRING,
       allowNull: false
@@ -21,7 +12,10 @@ module.exports = (sequelize, DataTypes) => {
     email: {
       type: DataTypes.STRING,
       allowNull: false,
-      unique: true
+      unique: true,
+      validate: {
+        isEmail: { msg: "E-mail inválido" }
+      }
     },
     senha: {
       type: DataTypes.STRING,

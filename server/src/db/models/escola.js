@@ -4,11 +4,6 @@ const {
 } = require('sequelize');
 const bcrypt = require("bcrypt");
 module.exports = (sequelize, DataTypes) => {
-  class Escola extends Model {    
-    static associate(models) {
-      this.hasMany(models.Aluno, { foreignKey: "id_escola" });
-    }
-  };
   Escola.init({
     nome: {
       type: DataTypes.STRING,
