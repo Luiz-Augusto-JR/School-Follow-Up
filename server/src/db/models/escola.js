@@ -35,6 +35,3 @@ module.exports = (sequelize, DataTypes) => {
   });
   return Escola;
 };
-
-
-teste
