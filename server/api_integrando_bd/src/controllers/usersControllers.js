@@ -71,6 +71,7 @@ async function updateUser(req, res, next) {
         await user.save();
 
         res.json(user);
+        // res.status(204).end()
     } catch (err) {
         console.log(err);
         res.status(500).json({ message: "Server error" });

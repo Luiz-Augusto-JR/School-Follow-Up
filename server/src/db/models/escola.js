@@ -6,14 +6,12 @@ const bcrypt = require("bcrypt");
 module.exports = (sequelize, DataTypes) => {
   class Escola extends Model {    
     static associate(models) {
-      this.hasMany(models.Aluno, { foreignKey: "id_escola" });
+    }
+    senhaValida(senha) {
+      return bcrypt.compareSync(senha, this.senha);
     }
   };
   Escola.init({
-    nome: {
-      type: DataTypes.STRING,
-      allowNull: false
-    },
     email: {
       type: DataTypes.STRING,
       allowNull: false,

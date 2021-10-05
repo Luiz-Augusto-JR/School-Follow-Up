@@ -6,14 +6,16 @@ const bcrypt = require("bcrypt");
 module.exports = (sequelize, DataTypes) => {
   class Aluno extends Model {    
     static associate(models) {
-      this.belongsTo(models.Escola, { foreignKey: "id_escola" });
+      this.belongsToMany(models.Frequencia, { through: "frequencias_alunos" });
+      this.hasMany(models.Nota, { foreignKey: "aluno_id" });
+      this.belongsToMany(models.Materia, { through: "alunos_materias" });
+    }
+
+    senhaValida(senha) {
+      return bcrypt.compareSync(senha, this.senha);
     }
   };
   Aluno.init({
-    matricula: {
-      type: DataTypes.INTEGER,
-      allowNull: false
-    },
     nome: {
       type: DataTypes.STRING,
       allowNull: false
@@ -21,7 +23,10 @@ module.exports = (sequelize, DataTypes) => {
     email: {
       type: DataTypes.STRING,
       allowNull: false,
-      unique: true
+      unique: true,
+      validate: {
+        isEmail: { msg: "E-mail inválido" }
+      }
     },
     senha: {
       type: DataTypes.STRING,

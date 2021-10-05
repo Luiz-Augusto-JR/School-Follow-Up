@@ -8,27 +8,18 @@ module.exports = {
         primaryKey: true,
         type: Sequelize.INTEGER
       },
-      matricula: {
-        type: Sequelize.INTEGER
-      },
       nome: {
-        type: Sequelize.STRING
+        type: Sequelize.STRING,
+        allowNull: false
       },
       email: {
-        type: Sequelize.STRING
+        type: Sequelize.STRING,
+        allowNull: false,
+        unique: true
       },
       senha: {
-        type: Sequelize.STRING
-      },
-      id_escola: {
-        type: Sequelize.INTEGER,
-        allowNull: false,
-        references: {
-          model: "escolas",
-          key: "id"
-        },
-        onUpdate: "CASCADE",
-        onDelete: "CASCADE"
+        type: Sequelize.STRING,
+        allowNull: false
       },
       created_at: {
         allowNull: false,

@@ -6,7 +6,10 @@ const bcrypt = require("bcrypt");
 module.exports = (sequelize, DataTypes) => {
   class Professor extends Model {
     static associate(models) {
-      this.belongsTo(models.Escola, { foreignKey: "id_escola" });
+      this.hasOne(models.Materia, { foreignKey: "professor_id" });
+    }
+    senhaValida(senha) {
+      return bcrypt.compareSync(senha, this.senha);
     }
   };
   Professor.init({
@@ -22,10 +25,6 @@ module.exports = (sequelize, DataTypes) => {
         isEmail: { msg: "E-mail inválido" }
       }
     },
-    materia: {
-     type: DataTypes.STRING, 
-     allowNull: false
-    },
     senha: {
       type: DataTypes.STRING,
       allowNull: false,
@@ -36,6 +35,7 @@ module.exports = (sequelize, DataTypes) => {
   }, {
     sequelize,
     modelName: 'Professor',
+    tableName: "professores"
   });
   return Professor;
 };
