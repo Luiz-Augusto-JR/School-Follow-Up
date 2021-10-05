@@ -10,7 +10,6 @@ module.exports = (sequelize, DataTypes) => {
       this.hasMany(models.Nota, { foreignKey: "aluno_id" });
       this.belongsToMany(models.Materia, { through: "alunos_materias" });
     }
-
     senhaValida(senha) {
       return bcrypt.compareSync(senha, this.senha);
     }

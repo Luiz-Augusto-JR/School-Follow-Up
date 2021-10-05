@@ -25,6 +25,10 @@ module.exports = (sequelize, DataTypes) => {
         isEmail: { msg: "E-mail inválido" }
       }
     },
+    materia: {
+      type: DataTypes.STRING,
+      allowNull: false
+    },
     senha: {
       type: DataTypes.STRING,
       allowNull: false,
