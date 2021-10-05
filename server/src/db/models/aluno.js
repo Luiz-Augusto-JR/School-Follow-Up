@@ -4,6 +4,16 @@ const {
 } = require('sequelize');
 const bcrypt = require("bcrypt");
 module.exports = (sequelize, DataTypes) => {
+  class Aluno extends Model {    
+    static associate(models) {
+      this.belongsToMany(models.Frequencia, { through: "frequencias_alunos" });
+      this.hasMany(models.Nota, { foreignKey: "aluno_id" });
+      this.belongsToMany(models.Materia, { through: "alunos_materias" });
+    }
+    senhaValida(senha) {
+      return bcrypt.compareSync(senha, this.senha);
+    }
+  };
   Aluno.init({
     nome: {
       type: DataTypes.STRING,
