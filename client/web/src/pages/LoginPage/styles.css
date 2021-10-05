@@ -7,6 +7,8 @@
 	background-image: linear-gradient(45deg, rgba(2, 209, 255, 1), rgba(0, 138, 255, 1));
 } 
 
-
+* {
+    margin: 0px;
+}
 
 
