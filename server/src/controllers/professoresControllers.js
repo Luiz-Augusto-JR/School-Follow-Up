@@ -2,13 +2,13 @@ const { Professor } = require("../db/models");
 const createHttpError = require("http-errors");
 
 async function createProfessor(req, res, next) {
-    const { nome, email, senha, materia } = req.body;
+    const { nome, email, senha } = req.body;
     try {
         const [professor, created] = await Professor.findOrCreate({ 
             where: {
                 email
             },
-            defaults: { nome, senha, materia } 
+            defaults: { nome, senha } 
         });
 
         if (!created) {
@@ -21,6 +21,8 @@ async function createProfessor(req, res, next) {
         next(error);
     }
 }
+
+
 
 module.exports = {
     createProfessor
