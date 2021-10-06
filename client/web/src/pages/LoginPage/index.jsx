@@ -1,6 +1,7 @@
 import React from "react";
 import "./styles.css";
 import logo from "../../assets/logo.png";
+import gif from "../../assets/logoCortada.gif";
 import { MdEmail, MdLock } from "react-icons/md";
 
 
@@ -11,29 +12,28 @@ export function LoginPage() {
         <div className="login">
 
             <div className="login-logo">
-                <img src={logo} alt="logo" />
+                <img src={gif} alt="logo" />
             </div>
-
+            <div className="caixa-login-right">
             <div className="login-right">
                 <h1>Entrar no School Follow-UP</h1>
 
                 <div className="loginInputEmail">
-                    <MdEmail />
-                    <input type={Text}
+                    <input size="50" type={Text}
                         placeholder="digite seu email"
                     />
                 </div>
 
                 <div className="loginInputPassword">
-                    <MdLock />
-                    <input type={Text}
+                    <input size="50"type={Text}
                         placeholder="digite sua senha"
                     />
                 </div>
 
-                <button type="submit">
-                    Login
+                <button className="button" type="submit">
+                    <h2>ENTRAR</h2>
                 </button>
+                </div>
 
             </div>
 

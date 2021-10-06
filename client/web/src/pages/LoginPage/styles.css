@@ -2,7 +2,8 @@ html {
     overflow-x: hidden;
     overflow-y: scroll;
     overflow: hidden;
-    background-image: linear-gradient(to bottom left, #008AFF 50%, rgb(255, 255, 255) 50%);
+    background-image: linear-gradient(100deg, #008AFF 50%, rgb(255, 255, 255) 50%);
+    
 }
 
 .login {
@@ -13,26 +14,74 @@ html {
     width: 100%;
 }
 
+.login-logo h1 {
+    padding: 0px 70px;
+    margin: 0px;
+    font-size: 50px;
+}
+
 .login-logo img {
-    width: 500px;
-    height: 500px;
-    text-shadow: 10px;
+    padding: 0px 55px;
+    margin: 0px;
 }
 
-.login-right h1 {}
-
-.login-right input,
-button {
-    margin-top: 10px;
-    border-radius: 50px;
-    box-shadow: 5px 5px 10px 0px rgb(0, 0, 0);
-}
-
-.login-right {
+.caixa-login-right{
+    background-color: rgb(255, 255, 255);
     margin-left: 30%;
-    padding-bottom: 100px;
+    border-radius: 5%;
+    margin-bottom: 100px;
+    box-shadow: 10px 10px 10px 0px grey;
 }
 
-.loginInputEmaiL {}
 
-.loginInputPassword {}
+.login-right input {
+    border-radius: 10px;
+    margin: 10px 10px 20px;
+    padding: 20px;
+    align-items: center;
+    justify-content: center;
+}
+
+.login-right h1 {
+    margin: 0px 50px;
+    align-items: center;
+    justify-content: center;
+}
+
+.button{
+    border-radius: 10px;
+    margin: 0px 5px 20px;
+    padding: 10px 167px;
+    align-items: center;
+    justify-content: center;
+    background-color: #008AFF;
+}
+
+.button txt{
+    text-transform: uppercase;
+}
+
+
+.container {
+    margin: auto;
+    position: relative;
+    transform-origin: bottom left;
+    transform: rotate(-61deg);
+    height: 200px;
+    width: 200px;
+  }
+  
+  .container div {
+    display: inline-block;
+    font: 900 1.5em Monaco, Monospace;
+    color: #000000;
+    height: 200px;
+    width: 15px;
+    position: absolute;
+    left: 0;
+    top: 0;
+    transform-origin: bottom center;
+    text-align: center;
+  }
+
+  
