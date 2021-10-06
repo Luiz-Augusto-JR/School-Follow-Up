@@ -1,14 +1,38 @@
-
-.diagonal-box {
-    -webkit-background-size: 100%;
-    -moz-background-size: 100%;
-    -o-background-size: 100%;
-    background-size: 100%;
-	background-image: linear-gradient(45deg, rgba(2, 209, 255, 1), rgba(0, 138, 255, 1));
-} 
-
-* {
-    margin: 0px;
+html {
+    overflow-x: hidden;
+    overflow-y: scroll;
+    overflow: hidden;
+    background-image: linear-gradient(to bottom left, #008AFF 50%, rgb(255, 255, 255) 50%);
 }
 
+.login {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    width: 100%;
+}
 
+.login-logo img {
+    width: 500px;
+    height: 500px;
+    text-shadow: 10px;
+}
+
+.login-right h1 {}
+
+.login-right input,
+button {
+    margin-top: 10px;
+    border-radius: 50px;
+    box-shadow: 5px 5px 10px 0px rgb(0, 0, 0);
+}
+
+.login-right {
+    margin-left: 30%;
+    padding-bottom: 100px;
+}
+
+.loginInputEmaiL {}
+
+.loginInputPassword {}
