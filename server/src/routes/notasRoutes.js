@@ -8,3 +8,4 @@ router.post("/", authentication(["escola"]), notasControllers.createNota);
 router.get("/", authentication(["aluno"]), notasControllers.getNotasOfStudent);
 
 module.exports = router;
+
