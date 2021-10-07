@@ -8,7 +8,7 @@ module.exports = (sequelize, DataTypes) => {
     static associate(models) {
       this.belongsToMany(models.Frequencia, { through: "frequencias_alunos" });
       this.hasMany(models.Nota, { foreignKey: "aluno_id" });
-      this.belongsToMany(models.Materia, { through: "alunos_materias" });
+      this.belongsToMany(models.Materia, { through: "alunos_materias", foreignKey: "aluno_id", as: "materias" });
     }
     senhaValida(senha) {
       return bcrypt.compareSync(senha, this.senha);
