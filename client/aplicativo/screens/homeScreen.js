@@ -6,6 +6,8 @@ export function HomeScreen() {
         <View style={styles.container}>                        
             <View style={styles.email}>
 
+
+
                 <Button
                     title="EMAIL"
                     onPress={() => Alert.alert('Simple Button pressed')}
@@ -35,7 +37,7 @@ export function HomeScreen() {
 const styles = StyleSheet.create({
     container: {
         flex: 2,
-        backgroundColor: 'blue',
+        backgroundColor: 'white',
         alignItems: 'center',
         justifyContent: 'center',
 
