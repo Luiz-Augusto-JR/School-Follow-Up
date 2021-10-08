@@ -1,0 +1,31 @@
+.home-logo img {
+    position: absolute;
+    top: 20vh;
+    left: 10vh;
+    margin: 0px;
+    padding: 0px;
+}
+
+.qrcode img {
+    position: absolute;
+    top: 20vh;
+    right: 10vh;
+    margin: 0px;
+    padding: 0px;
+}
+
+.qrcode h2 {
+    position: absolute;
+    top: 14vh;
+    right: 9.5vh;
+    margin: 0px;
+    padding: 0px;
+}
+
+.qrcode h1 {
+    position: absolute;
+    top: 10vh;
+    right: 28vh;
+    margin: 0px;
+    padding: 0px;
+}

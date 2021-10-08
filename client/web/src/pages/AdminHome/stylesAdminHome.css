@@ -1,0 +1,151 @@
+.bordaSuperior h1{
+    background-color: rgb(255, 255, 255);
+    color: rgb(0, 0, 0);
+    margin: 0px 0px 0px 0px;
+    padding-left: 20px;
+    box-shadow: 0px 5px 10px #777777;
+}
+
+.buttonDiv{
+    position: absolute;
+    right: 10vh;
+    margin-top: 20px;
+}
+
+.divMaterias{
+    position: absolute;
+    top: 40%;
+    right: 10vh;
+}
+
+.buttonMaterias text{
+    font-size: 30px;
+    text-transform: uppercase;
+    text-transform: capitalize;
+}
+
+.buttonCriar text{
+    font-size: 18px;
+    text-transform: uppercase;
+    text-transform: capitalize;
+}
+
+
+.buttonMaterias {
+    width: 600px;
+    height: 200px;
+    border: none;
+    outline: none;
+    color: #fff;
+    background: rgb(255, 255, 255);
+    cursor: pointer;
+    position: relative;
+    z-index: 0;
+    border-radius: 10px;
+    box-shadow: 0px 5px 10px #adadad;
+}
+
+.buttonMaterias:before {
+    content: '';
+    background: linear-gradient(45deg, #0044ff, #0044ff, #ffffff, #0044ff, #0044ff, #ffffff, #0044ff, #0044ff, #0044ff);
+    position: absolute;
+    top: -2px;
+    left:-2px;
+    background-size: 400%;
+    z-index: -1;
+    filter: blur(5px);
+    width: calc(100% + 4px);
+    height: calc(100% + 4px);
+    animation: glowing 20s linear infinite;
+    opacity: 0;
+    transition: opacity .3s ease-in-out;
+    border-radius: 10px;
+}
+
+.buttonMaterias:active {
+    color: rgb(255, 255, 255);
+    transform: translateY(4px);
+}
+
+.buttonMaterias:active:after {
+    background: transparent;
+}
+
+.buttonMaterias:hover:before {
+    opacity: 1;
+}
+
+.buttonMaterias:after {
+    z-index: -1;
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: rgb(255, 238, 0);
+    left: 0;
+    top: 0;
+    border-radius: 10px;
+}
+
+.buttonCriar {
+    width: 300px;
+    height: 100px;
+    margin-left: 10px;
+    border: none;
+    outline: none;
+    color: #fff;
+    background: rgb(255, 255, 255);
+    cursor: pointer;
+    position: relative;
+    z-index: 0;
+    border-radius: 10px;
+    box-shadow: 0px 5px 10px #adadad;
+}
+
+.buttonCriar:before {
+    content: '';
+    background: linear-gradient(45deg, #48ff00, #48ff00, #ffffff, #48ff00, #48ff00, #ffffff, #48ff00, #48ff00, #48ff00);
+    position: absolute;
+    top: -2px;
+    left:-2px;
+    background-size: 400%;
+    z-index: -1;
+    filter: blur(5px);
+    width: calc(100% + 4px);
+    height: calc(100% + 4px);
+    animation: glowing 20s linear infinite;
+    opacity: 0;
+    transition: opacity .3s ease-in-out;
+    border-radius: 10px;
+}
+
+.buttonCriar:active {
+    color: rgb(255, 255, 255);
+    transform: translateY(4px);
+}
+
+.buttonCriar:active:after {
+    background: transparent;
+}
+
+.buttonCriar:hover:before {
+    opacity: 1;
+}
+
+.buttonCriar:after {
+    z-index: -1;
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: rgb(72, 247, 3);
+    left: 0;
+    top: 0;
+    border-radius: 10px;
+}
+
+@keyframes glowing {
+    0% { background-position: 0 0; }
+    50% { background-position: 400% 0; }
+    100% { background-position: 0 0; }
+}
