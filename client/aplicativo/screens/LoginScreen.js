@@ -7,7 +7,7 @@ export function LoginScreen() {
     <View style={styles.container}>
         <Image
          style={styles.stretch}
-         source={require('../components/logo.png')}
+         source={require('../assets/logo.png')}
       />
       <Text></Text>
       <View style={styles.email}>
