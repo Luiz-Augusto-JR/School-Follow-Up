@@ -23,6 +23,8 @@ export function LoginScreen() {
         title="SENHA"
         onPress={() => Alert.alert('Simple Button pressed')}
       />
+      </View>
+
          <Text> <br></br> </Text> 
        <View style={styles.login}>
         
@@ -32,7 +34,7 @@ export function LoginScreen() {
       
       />
        </View>
-        </View>
+        
       </View>
     </View>
   );
@@ -50,12 +52,14 @@ const styles = StyleSheet.create({
     width: 250,
     height: 250,
     resizeMode: 'stretch',
+    borderRadius: 20
   },
   email:{
-    width: "50%"
+    width: "50%",
+   
   },
   senha:{
-
+    
   },
   login:{
 
