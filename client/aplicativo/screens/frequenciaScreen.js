@@ -44,7 +44,7 @@ export function FrequenciaScreen() {
                         <Td text="10" />
                     </View>
                     <View style={styles.linhaTabela}>
-                        <Td customStyle={{ width: "30%" }} text="Matemática"/>
+                        <Td customStyle={{ width: "30%" }} text="Portugues"/>
                         <Td text="10"/>
                         <Td text="10"/>
                         <Td text="10" />
@@ -52,7 +52,7 @@ export function FrequenciaScreen() {
                         <Td text="10" />
                     </View>
                     <View style={styles.linhaTabela}>
-                        <Td customStyle={{ width: "30%" }} text="Matemática"/>
+                        <Td customStyle={{ width: "30%" }} text="Fisica"/>
                         <Td text="10"/>
                         <Td text="10"/>
                         <Td text="10" />
@@ -60,7 +60,7 @@ export function FrequenciaScreen() {
                         <Td text="10" />
                     </View>
                     <View style={styles.linhaTabela}>
-                        <Td customStyle={{ width: "30%" }} text="Matemática"/>
+                        <Td customStyle={{ width: "30%" }} text="Biologia"/>
                         <Td text="10"/>
                         <Td text="10"/>
                         <Td text="10" />
@@ -68,7 +68,7 @@ export function FrequenciaScreen() {
                         <Td text="10" />
                     </View>
                     <View style={styles.linhaTabela}>
-                        <Td customStyle={{ width: "30%" }} text="Matemática"/>
+                        <Td customStyle={{ width: "30%" }} text="Sociologia"/>
                         <Td text="10"/>
                         <Td text="10"/>
                         <Td text="10" />
@@ -76,7 +76,7 @@ export function FrequenciaScreen() {
                         <Td text="10" />
                     </View>
                     <View style={styles.linhaTabela}>
-                        <Td customStyle={{ width: "30%" }} text="Matemática"/>
+                        <Td customStyle={{ width: "30%" }} text="Ingles"/>
                         <Td text="10"/>
                         <Td text="10"/>
                         <Td text="10" />
