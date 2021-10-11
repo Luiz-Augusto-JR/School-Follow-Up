@@ -4,6 +4,7 @@ import { FrequenciaScreen } from '../screens/frequenciaScreen';
 import { FontAwesome5 } from '@expo/vector-icons';
 import { MaterialCommunityIcons } from '@expo/vector-icons';
 import { FontAwesome } from '@expo/vector-icons';
+import { BoletimScreen } from "../screens/BoletimScreen";
 
 
 const Tab = createMaterialBottomTabNavigator();
@@ -15,7 +16,7 @@ export function AppRoutes() {
         name="Perfil" 
         component={FrequenciaScreen} 
         options={{
-            tabBarIcon: ({ focused, color }) => <FontAwesome5 name="user" size={24} color={color} />
+            tabBarIcon: ({ focused, color }) => <FontAwesome5 name="user" size={24} color="white" />
         }} />          
         <Tab.Screen 
         name="Nota" 
@@ -31,7 +32,7 @@ export function AppRoutes() {
         }} />        
          <Tab.Screen 
         name="Boletim" 
-        component={FrequenciaScreen} 
+        component={BoletimScreen} 
         options={{
             tabBarIcon: ({ focused, color }) =><FontAwesome name="list-alt" size={24} color="white" />
         }} />        
