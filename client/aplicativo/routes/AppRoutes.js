@@ -12,7 +12,7 @@ export function AppRoutes() {
   return (
     <Tab.Navigator>
       <Tab.Screen 
-        name="Frequencia" 
+        name="Perfil" 
         component={FrequenciaScreen} 
         options={{
             tabBarIcon: ({ focused, color }) => <FontAwesome5 name="user" size={24} color={color} />
