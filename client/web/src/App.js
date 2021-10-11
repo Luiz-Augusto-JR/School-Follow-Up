@@ -1,14 +1,13 @@
 import React from 'react';
 import './App.css';
 
-import { LoginPage } from './pages/LoginPage';
+// import { LoginPage } from './pages/LoginPage';
+import { TesteQR } from './pages/TesteQR';
 
 
 function App() {
   return (
-    <div>
-    <LoginPage />
-    </div>
+    <TesteQR />
   );
 }
 
