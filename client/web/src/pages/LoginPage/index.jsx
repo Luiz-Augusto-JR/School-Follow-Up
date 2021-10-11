@@ -1,5 +1,5 @@
 import React from "react";
-import "./styles.css";
+import "./stylesLoginPage.css";
 import gif from "../../assets/logoCortadaBranca.gif";
 
 

@@ -2,7 +2,7 @@
 const {
   Model
 } = require('sequelize');
-const aluno = require('./aluno');
+
 module.exports = (sequelize, DataTypes) => {
   class Frequencia extends Model {
     static associate(models) {
@@ -11,13 +11,14 @@ module.exports = (sequelize, DataTypes) => {
   };
   Frequencia.init({
     data: {
-      type: DataTypes.DATE,
+      type: DataTypes.DATEONLY,
       allowNull: false
     } 
     
   }, {
     sequelize,
     modelName: 'Frequencia',
+    tableName: "frequencias"
   });
   return Frequencia;
 };

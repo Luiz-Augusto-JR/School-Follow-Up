@@ -1,5 +1,5 @@
 import React from "react";
-import "./styles.css";
+import "./stylesHomeProfessores.css";
 import gif from "../../assets/logoCortadaBranca.gif";
 
 
