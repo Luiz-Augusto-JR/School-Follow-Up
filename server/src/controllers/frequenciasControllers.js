@@ -1,7 +1,6 @@
 const { Op } = require("sequelize");
-const { Frequencia, sequelize } = require("../db/models");
+const { Frequencia, Aluno, FrequenciaAluno } = require("../db/models");
 const createHttpError = require("http-errors");
-const QRCode = require("qrcode");
 
 async function createFrequencia(req, res, next) {
     const { data } = req.body;
@@ -15,26 +14,33 @@ async function createFrequencia(req, res, next) {
     }    
 }
 
-async function obterQR(req, res, next) {
-    const {img} = req.body;
-    try {
-    const [img, created] = await img.read(fs.readFileSync('./qr_photo.png'));
-    
-    const qr = new QRReader();
-      const value = await new Promise((resolve, reject) => {
-      qr.callback = (err, v) => err != null ? reject(err) : resolve(v);
-      qr.decode(img.bitmap);
-    });
+async function registrarFrequencia(req, res, next) {
+    const alunoId = res.locals.userId;
+    const frequenciaId  = req.params.id;
 
-    res.json(obterQR);
+    console.log(alunoId, frequenciaId)
+
+    try {                
+        const frequencia = await Frequencia.findOne({ where: { id: frequenciaId } });
+
+        if (!frequencia) {
+            throw new createHttpError(404, "Frequência não encontrada!");
+        }
+
+        await FrequenciaAluno.findOrCreate({
+            where: {
+                [Op.and]: [{ alunoId }, { frequenciaId }]
+            }                    
+        });
+
+        res.status(204).end();
     } catch (error) {
         console.log(error);
         next(error);
-    }
-    
+    }    
 }
 
 module.exports = {
     createFrequencia,
-    obterQR
+    registrarFrequencia
 }

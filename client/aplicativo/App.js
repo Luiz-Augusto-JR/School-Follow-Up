@@ -1,10 +1,10 @@
 import React from 'react';
-import { FrequenciaScreen } from './screens/frequenciaScreen';
-//import { LoginScreen } from './screens/loginScreen';
+import { LeitorQrScreen } from './screens/LeitorQrScreen';
+
 
 export default function App() {
   return (
-    <FrequenciaScreen /> 
+    <LeitorQrScreen />
   );
 }
 
