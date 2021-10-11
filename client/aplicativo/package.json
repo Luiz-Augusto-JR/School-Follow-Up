@@ -8,10 +8,13 @@
     "eject": "expo eject"
   },
   "dependencies": {
+    "axios": "^0.22.0",
     "@expo/vector-icons": "^12.0.0",
     "@react-navigation/material-bottom-tabs": "^6.0.8",
     "@react-navigation/native": "^6.0.5",
+
     "expo": "~42.0.1",
+    "expo-barcode-scanner": "^10.2.2",
     "expo-status-bar": "~1.0.4",
     "react": "16.13.1",
     "react-dom": "16.13.1",
