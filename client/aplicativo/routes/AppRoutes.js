@@ -16,7 +16,7 @@ export function AppRoutes() {
         name="Perfil" 
         component={FrequenciaScreen} 
         options={{
-            tabBarIcon: ({ focused, color }) => <FontAwesome5 name="user" size={24} color={color} />
+            tabBarIcon: ({ focused, color }) => <FontAwesome5 name="user" size={24} color="white" />
         }} />          
         <Tab.Screen 
         name="Nota" 
