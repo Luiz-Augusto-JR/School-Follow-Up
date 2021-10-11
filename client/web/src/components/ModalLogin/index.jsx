@@ -6,12 +6,11 @@ export function ModalLogin({ closeModal }) {
         <Modal closeModal={closeModal}>
             <form className="form-login">
                 <label>
-                    Nome                    
+                    Nome
                 </label>
                 <input className="inputModal" type="text" />
                 <label>
                     E-mail
-                    
                 </label>
                 <input className="inputModal" type="text" />
                 <label>
@@ -19,7 +18,7 @@ export function ModalLogin({ closeModal }) {
                 </label>
                 <input className="inputModal" type="text" />
                 <label>
-                    Confirmar senha                
+                    Confirmar senha
                 </label>
                 <input className="inputModal" type="text" />
                 <button className="buttonCriar"  >Enviar</button>
