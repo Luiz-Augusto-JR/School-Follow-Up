@@ -13,6 +13,7 @@ export function Td({ text, customStyle }) {
 
 export function BoletimScreen() {
     return (
+        <ScrollView>
         <View style={styles.container}>
             <Text style={styles.header}>BOLETIM</Text>
 
@@ -95,7 +96,7 @@ export function BoletimScreen() {
                     <Td customStyle={{ width: "30%" }} text="Geografia" />
                     <Td text="APROVADO" />
                     <Td text="100%" />
-                
+
                 </View>
                 <View style={styles.linhaTabela}>
                     <Td customStyle={{ width: "30%" }} text="Matemática" />
@@ -129,7 +130,7 @@ export function BoletimScreen() {
                 </View>
             </View>
         </View>
-        </ScrollView >
+    </ScrollView>
     );
 }
 
@@ -137,7 +138,7 @@ export function BoletimScreen() {
 const styles = StyleSheet.create({
     container: {
         flex: 1,
-        alignItems: "center",        
+        alignItems: "center",
     },
     header: {
         fontSize: 20,
@@ -153,13 +154,13 @@ const styles = StyleSheet.create({
         margin: 20
     },
     linhaTabela: {
-        flexDirection: "row",        
+        flexDirection: "row",
     },
-    td: {                
-        borderWidth: 1,          
+    td: {
+        borderWidth: 1,
         textAlign: "center",
         width: "16%",
-        padding: 5        
+        padding: 5
     },
     notas: {
         backgroundColor: 'blue',
