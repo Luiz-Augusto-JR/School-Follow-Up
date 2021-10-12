@@ -10,7 +10,6 @@ export function Td({ text, customStyle }) {
     );
 }
 
-
 export function FrequenciaScreen() {
     return (
         <ScrollView>

@@ -5,6 +5,7 @@ import { FontAwesome5 } from '@expo/vector-icons';
 import { MaterialCommunityIcons } from '@expo/vector-icons';
 import { FontAwesome } from '@expo/vector-icons';
 import { BoletimScreen } from "../screens/BoletimScreen";
+import { PerfilScreen } from "../screens/PerfilScreen";
 
 
 const Tab = createMaterialBottomTabNavigator();
@@ -14,7 +15,7 @@ export function AppRoutes() {
     <Tab.Navigator>
       <Tab.Screen 
         name="Perfil" 
-        component={FrequenciaScreen} 
+        component={PerfilScreen} 
         options={{
             tabBarIcon: ({ focused, color }) => <FontAwesome5 name="user" size={24} color="white" />
         }} />          
