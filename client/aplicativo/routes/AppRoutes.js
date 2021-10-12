@@ -4,6 +4,7 @@ import { FrequenciaScreen } from '../screens/frequenciaScreen';
 import { FontAwesome5 } from '@expo/vector-icons';
 import { MaterialCommunityIcons } from '@expo/vector-icons';
 import { FontAwesome } from '@expo/vector-icons';
+import { PerfilScreen } from '../screens/PerfilScreen';
 
 
 const Tab = createMaterialBottomTabNavigator();
