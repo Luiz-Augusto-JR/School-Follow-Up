@@ -1,11 +1,13 @@
 const express = require("express");
 const cors = require("cors");
 const app = express();
+const morgan = require("morgan");
 const PORT = process.env.PORT || 3001;
 
 // Definindo os middlewares
 app.use(cors());
 app.use(express.json());
+app.use(morgan("dev"));
 
 
 // Definindo as rotas
@@ -16,13 +18,10 @@ app.use("/alunos", require("./routes/alunosRoutes"));
 app.use("/notas", require("./routes/notasRoutes"));
 app.use("/frequencias", require("./routes/frequenciaRoutes"));
 app.use("/auth", require("./routes/authRoutes"));
-// app.set("view engine", "ejs");
 
 
 // Middleware de tratamento de erros
 app.use(require("./middlewares/errorMiddleware"));
-// app.use(bp.urlencoded({ extended: false }));
-
 
 app.listen(PORT, () => console.log("O servidor está rodando..."));
 

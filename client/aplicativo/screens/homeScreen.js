@@ -11,14 +11,14 @@ export function HomeScreen() {
                     title="EMAIL"
                     onPress={() => Alert.alert('Simple Button pressed')}
                 />
-                <Text> <br></br> </Text>
+                <Text> </Text>
                 <View style={styles.senha}>
 
                     <Button
                         title="SENHA"
                         onPress={() => Alert.alert('Simple Button pressed')}
                     />
-                    <Text> <br></br> </Text>
+                    <Text>  </Text>
                     <View style={styles.login}>
 
                         <Button

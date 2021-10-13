@@ -3,6 +3,7 @@ import { StyleSheet, Text, View, Button, Image, TouchableOpacity, ScrollView } f
 import { FontAwesome5 } from '@expo/vector-icons';
 import { FontAwesome } from '@expo/vector-icons';
 import { MaterialCommunityIcons } from '@expo/vector-icons';
+import { useAuth } from '../context/AuthContext';
 
 export function Td({ text, customStyle }) {
     return (
@@ -12,6 +13,8 @@ export function Td({ text, customStyle }) {
 
 
 export function FrequenciaScreen() {
+    const { authActions } = useAuth();
+
     return (
         <ScrollView>
             <View style={styles.container}>
@@ -104,6 +107,7 @@ export function FrequenciaScreen() {
                     </View>
                 </View>
             </View>
+            <Button onPress={() => authActions.signOut()} title="Sair" />
         </ScrollView>
     );
 }

@@ -1,8 +1,9 @@
-import React from 'react';
-import { StyleSheet, Text, View, Button, Image, TouchableOpacity, ScrollView } from 'react-native';
+import React, { useEffect, useState } from 'react';
+import { StyleSheet, Text, View, Button, Image, TouchableOpacity, ScrollView, Alert } from 'react-native';
 import { FontAwesome5 } from '@expo/vector-icons';
 import { FontAwesome } from '@expo/vector-icons';
 import { MaterialCommunityIcons } from '@expo/vector-icons';
+import { api } from '../services/api';
 
 
 export function Td({ text, customStyle }) {
@@ -12,6 +13,38 @@ export function Td({ text, customStyle }) {
 }
 
 export function BoletimScreen() {
+    const [boletim, setBoletim] = useState([
+        {
+            materia: "geografia",            
+            n1: 10,
+            n2: 10,
+            n3: 10,
+            n4: 10,
+            media: 10
+        },
+        {
+            materia: "matemática",
+            n1: 10,
+            n2: 10,
+            n3: 10,
+            n4: 10,
+            media: 10
+        }
+    ]);
+
+    // useEffect(() => {
+    //     async function getBoletim() {
+    //         try {
+    //             const boletim = (await api.get("/boletim")).data;
+    //             setBoletim(boletim);
+    //         } catch (error) {                
+    //             console.log(error);
+    //         }            
+    //     }
+
+    //     getBoletim();
+    // }, []);
+
     return (
         <ScrollView>
         <View style={styles.container}>
@@ -26,62 +59,18 @@ export function BoletimScreen() {
                     <Td text="4º BI" />
                     <Td text="Média Final" />
                 </View>
-                <View style={styles.linhaTabela}>
-                    <Td customStyle={{ width: "30%" }} text="Geografia" />
-                    <Td text="10" />
-                    <Td text="10" />
-                    <Td text="10" />
-                    <Td text="10" />
-                    <Td text="10" />
-                </View>
-                <View style={styles.linhaTabela}>
-                    <Td customStyle={{ width: "30%" }} text="Matemática" />
-                    <Td text="10" />
-                    <Td text="10" />
-                    <Td text="10" />
-                    <Td text="10" />
-                    <Td text="10" />
-                </View>
-                <View style={styles.linhaTabela}>
-                    <Td customStyle={{ width: "30%" }} text="Portugues" />
-                    <Td text="10" />
-                    <Td text="10" />
-                    <Td text="10" />
-                    <Td text="10" />
-                    <Td text="10" />
-                </View>
-                <View style={styles.linhaTabela}>
-                    <Td customStyle={{ width: "30%" }} text="Fisica" />
-                    <Td text="10" />
-                    <Td text="10" />
-                    <Td text="10" />
-                    <Td text="10" />
-                    <Td text="10" />
-                </View>
-                <View style={styles.linhaTabela}>
-                    <Td customStyle={{ width: "30%" }} text="Biologia" />
-                    <Td text="10" />
-                    <Td text="10" />
-                    <Td text="10" />
-                    <Td text="10" />
-                    <Td text="10" />
-                </View>
-                <View style={styles.linhaTabela}>
-                    <Td customStyle={{ width: "30%" }} text="Sociologia" />
-                    <Td text="10" />
-                    <Td text="10" />
-                    <Td text="10" />
-                    <Td text="10" />
-                    <Td text="10" />
-                </View>
-                <View style={styles.linhaTabela}>
-                    <Td customStyle={{ width: "30%" }} text="Ingles" />
-                    <Td text="10" />
-                    <Td text="10" />
-                    <Td text="10" />
-                    <Td text="10" />
-                    <Td text="10" />
-                </View>
+                {
+                    boletim.map(materia => (
+                        <View style={styles.linhaTabela}>
+                            <Td customStyle={{ width: "30%" }} text={materia.materia} />
+                            <Td text={materia.n1} />
+                            <Td text={materia.n2} />
+                            <Td text={materia.n3} />
+                            <Td text={materia.n4} />
+                            <Td text={materia.media} />
+                        </View>
+                    ))
+                }
             </View>
 
             <Text style={styles.titulo}>Frequência</Text>

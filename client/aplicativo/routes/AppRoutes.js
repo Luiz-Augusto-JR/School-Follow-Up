@@ -11,7 +11,7 @@ const Tab = createMaterialBottomTabNavigator();
 
 export function AppRoutes() {
   return (
-    <Tab.Navigator>
+    <Tab.Navigator initialRouteName="Boletim">
       <Tab.Screen 
         name="Perfil" 
         component={FrequenciaScreen} 
