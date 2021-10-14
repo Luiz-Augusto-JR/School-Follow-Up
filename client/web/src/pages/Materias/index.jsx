@@ -1,14 +1,12 @@
 import React, { useEffect, useState } from "react";
 import "./stylesMaterias.css";
 import { ModalLogin } from "../../components/ModalLogin";
-import { ModalLoginA } from "../../components/ModalLoginA";
-import { api } from "../../../../aplicativo/services/api";
+import { api } from "../../../../web/src/services/api";
 
 
 export function Materias() {
     const [isModalVisible, setIsModalVisible] = useState(false);
-    const [isModalAlunoVisible, setIsModalVisible] = useState(false);
-    const [isModalVisible, setIsModalVisible] = useState(false);
+    const [isModalAlunoVisible, setIsModalAlunoVisible] = useState(false);
     const [materias, setMaterias] = useState([
         { 
             id: 1, 
@@ -46,7 +44,6 @@ export function Materias() {
 
     function getInfoMateria(id) {
         const infoMateria = materias.find(materia => materia.id === id);
-YTH
         setInfoMateria(infoMateria);
     }
 
@@ -54,17 +51,16 @@ YTH
         <div>
             {
                 isModalVisible &&
-                <ModalLoginA closeModal={() => setIsModalVisible(false)}>
-                    <button>Enviar</button>
-                </ModalLoginA>
+                <ModalLogin closeModal={() => setIsModalVisible(false)}>
+                    <button>bbbbbb</button>
+                </ModalLogin>
             }
             {
                 isModalAlunoVisible &&
-                <Modal>
-
-                </Modal>
-
-            }         
+                <ModalLogin closeModal={() => setIsModalAlunoVisible(false)}>
+                    <button>aaaaaaaaaaa</button>
+                </ModalLogin>
+            }
             <div className="bordaSuperior">
                 <h1>Bem -Vindo!</h1>
             </div>
@@ -85,7 +81,7 @@ YTH
                 <button class="buttonCriar" onClick={() => setIsModalVisible(true)}>
                     <text> ADICIONAR ALUNO</text>
                 </button>
-                <button class="buttonCriar" onClick={() => setIsModalVisible(true)}>
+                <button class="buttonCriar" onClick={() => setIsModalAlunoVisible(true)}>
                     <text> ADICONAR PROFESSOR</text>
                 </button>
             </div>
