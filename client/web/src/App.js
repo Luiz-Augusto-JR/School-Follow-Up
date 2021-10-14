@@ -1,14 +1,15 @@
 import React from 'react';
 import './App.css';
-
 import { LoginPage } from './pages/LoginPage';
 import { HomeProfessores } from './pages/HomeProfessores';
 import { AdminHome } from './pages/AdminHome';
+import { Materias } from './pages/Materias';
+import { TesteQR } from './pages/TesteQR';
 
 function App() {
     return ( 
     <div> 
-        <AdminHome />
+        <LoginPage />
     </div>
     );
 }

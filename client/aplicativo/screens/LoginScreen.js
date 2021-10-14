@@ -1,8 +1,22 @@
-import React from 'react';
-import { StyleSheet, Text, View, Button, Image } from 'react-native';
+import React, { useState } from 'react';
+import { StyleSheet, Text, TextInput, View, Button, Image, Alert } from 'react-native';
+import { useAuth } from '../context/AuthContext';
 
 
 export function LoginScreen() {
+  const [email, setEmail] = useState("");
+  const [senha, setSenha] = useState("");
+ 
+  const { authActions } = useAuth();
+
+  async function handleSignIn() {
+    try {
+      await authActions.signIn(email, senha);
+    } catch (error) {
+      alert("Não foi possível fazer o login");
+    }
+  }
+
   return (
     <View style={styles.container}>
         <Image
@@ -12,27 +26,33 @@ export function LoginScreen() {
       <Text></Text>
       <View style={styles.email}>
        
-      <Button
+      <TextInput
+        style={styles.input}
         title="EMAIL"
-        onPress={() => Alert.alert('Simple Button pressed')}
+        placeholder="Digite o e-mail"
+        value={email}
+        onChangeText={setEmail}
       />
-      <Text> <br></br> </Text>
+      <Text>  </Text>
         <View style={styles.senha}>
           
-         <Button
+      <TextInput
+        style={styles.input}
         title="SENHA"
-        onPress={() => Alert.alert('Simple Button pressed')}
+        placeholder="Digite a senha"
+        value={senha}
+        onChangeText={setSenha}
+        secureTextEntry
       />
       </View>
 
-         <Text> <br></br> </Text> 
+         <Text> </Text> 
        <View style={styles.login}>
         
-         <Button
-        title="LOGIN"
-        onPress={() => Alert.alert('Simple Button pressed')}
-      
-      />
+        <Button
+          title="LOGIN"
+          onPress={handleSignIn}
+        />
        </View>
         
       </View>
@@ -43,7 +63,7 @@ export function LoginScreen() {
 const styles = StyleSheet.create({
   container: {
     flex: 2,
-    backgroundColor: 'blue',
+    backgroundColor: '#008AFF',
     alignItems: 'center',
     justifyContent: 'center',
     
@@ -63,6 +83,9 @@ const styles = StyleSheet.create({
   },
   login:{
 
+  },
+  input: {
+    backgroundColor: "white"
   }
 });
 
