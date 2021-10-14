@@ -10,11 +10,10 @@ export function HomeProfessores() {
             <div className="home-logo">
                 <img src={gif} alt="logo" />
             </div>
-
+            <div className="bordaSuperior">
+                <h1>BEM-VINDO AO SCHOOL FOLLOW-UP!</h1>
+            </div>
             <div className="qrcode">
-                <h1>BEM-VINDO!
-
-                </h1>
                 <h2>Escaneie o QRCODE para registrar presença na aula!
 
                 </h2>

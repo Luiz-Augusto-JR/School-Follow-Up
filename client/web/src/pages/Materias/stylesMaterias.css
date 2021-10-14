@@ -9,11 +9,12 @@ html {
 }
 
 .bordaSuperior h1{
-    background-color: rgb(255, 255, 255);
-    color: rgb(0, 0, 0);
+    background-color: #006494;
+    color: rgb(255, 255, 255);
     margin: 0px 0px 0px 0px;
-    padding-left: 20px;
+    padding-left: 450px;
     box-shadow: 0px 5px 10px #777777;
+    text-shadow: 5px 5px 0px #000000;
 }
 
 .buttonDiv{
@@ -23,9 +24,10 @@ html {
 }
 
 
-.materias{    
+.materiasfont {    
     position: absolute;
-    left: 10px;
+    left: 30px;
+    top: 40px;
     padding: 0px;
     margin: 0vh;
     padding-top: 15px;
@@ -36,13 +38,13 @@ html {
 }
 
 
-.materias h2{
+.materiasfont h2{
         padding-bottom: 30px;
         text-transform: uppercase;
         font-family: verdana;
-        font-size: 70px;
+        font-size: 100px;
         font-weight: 700;
-        color: #0099ff;
+        color: #008AFF;
         margin: 0vh;
         text-shadow: 1px 1px 1px #919191,
             1px 2px 1px #919191,
@@ -60,7 +62,7 @@ html {
         1px 30px 60px rgba(16,16,16,0.4);
   }
 
-.materias h3{
+.materiasfont h3{
     padding-top: 20px;
     text-transform: uppercase;
     font-family: verdana;
@@ -84,7 +86,67 @@ html {
     1px 30px 60px rgba(16,16,16,0.4);
 }
 
-  
+.AlunosEProfessoresfont {    
+    position: absolute;
+    right: 40px;
+    top: 65px;
+    padding: 0px;
+    margin: 0vh;
+    padding-top: 15px;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+
+.AlunosEProfessoresfont h2{
+        padding-bottom: 30px;
+        text-transform: uppercase;
+        font-family: verdana;
+        font-size: 50px;
+        font-weight: 700;
+        color: #ffffff;
+        margin: 0vh;
+        text-shadow: 1px 1px 1px #919191,
+            1px 2px 1px #919191,
+            1px 3px 1px #919191,
+            1px 4px 1px #919191,
+            1px 5px 1px #919191,
+            1px 6px 1px #919191,
+            1px 7px 1px #919191,
+            1px 8px 1px #919191,
+            1px 9px 1px #919191,
+            1px 10px 1px #919191,
+        1px 18px 6px rgba(16,16,16,0.4),
+        1px 22px 10px rgba(16,16,16,0.2),
+        1px 25px 35px rgba(16,16,16,0.2),
+        1px 30px 60px rgba(16,16,16,0.4);
+  }
+
+.AlunosEProfessoresfont h3{
+    padding-top: 20px;
+    text-transform: uppercase;
+    font-family: verdana;
+    font-size: 30px;
+    font-weight: 700;
+    color: #ffffff;
+    margin: 0vh;
+    text-shadow: 1px 1px 1px #919191,
+        1px 2px 1px #919191,
+        1px 3px 1px #919191,
+        1px 4px 1px #919191,
+        1px 5px 1px #919191,
+        1px 6px 1px #919191,
+        1px 7px 1px #919191,
+        1px 8px 1px #919191,
+        1px 9px 1px #919191,
+        1px 10px 1px #919191,
+    1px 18px 6px rgba(16,16,16,0.4),
+    1px 22px 10px rgba(16,16,16,0.2),
+    1px 25px 35px rgba(16,16,16,0.2),
+    1px 30px 60px rgba(16,16,16,0.4);
+}
 
 
 

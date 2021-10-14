@@ -1,12 +1,10 @@
 import React, { useEffect, useState } from "react";
 import "./stylesMaterias.css";
-import { ModalLogin } from "../../components/ModalLogin";
 import { api } from "../../../../web/src/services/api";
+import { Modal } from "../../components/Modal";
 
 
 export function Materias() {
-    const [isModalVisible, setIsModalVisible] = useState(false);
-    const [isModalAlunoVisible, setIsModalAlunoVisible] = useState(false);
     const [materias, setMaterias] = useState([
         { 
             id: 1, 
@@ -29,6 +27,9 @@ export function Materias() {
     ]);
 
     const [infoMateria, setInfoMateria] = useState(null);
+    const [alunoSelecionado, setAlunoSelecionado] = useState(null);
+    const [notas, setNotas] = useState([]);
+    const [frequencia, setFrequencia] = useState(null);
 
     // useEffect(() => {
     //     (async () => {
@@ -47,44 +48,68 @@ export function Materias() {
         setInfoMateria(infoMateria);
     }
 
+    useEffect(() => {
+        async function getNotasFrequenciaAluno() {
+            try {
+                const notas = (await api.get(`/alunos/${alunoSelecionado.id}/notas`)).data;
+                const frequencia = (await api.get(`/alunos/${alunoSelecionado.id}/frequencia`)).data;    
+                
+                setNotas(notas);
+                setFrequencia(frequencia);
+            } catch (error) {
+                console.log(error);
+            }
+        }
+    }, [alunoSelecionado]);
+
     return (
+
         <div>
-            {
-                isModalVisible &&
-                <ModalLogin closeModal={() => setIsModalVisible(false)}>
-                    <button>bbbbbb</button>
-                </ModalLogin>
-            }
-            {
-                isModalAlunoVisible &&
-                <ModalLogin closeModal={() => setIsModalAlunoVisible(false)}>
-                    <button>aaaaaaaaaaa</button>
-                </ModalLogin>
-            }
             <div className="bordaSuperior">
-                <h1>Bem -Vindo!</h1>
+                <h1>BEM-VINDO AO SCHOOL FOLLOW-UP!</h1>
             </div>
-            <div>
+            <div className="materiasfont">
+            <h2>materias</h2>
+            </div>
+            <div className="AlunosEProfessoresfont">
+            <h2>Alunos E Professores</h2>
+            </div>
+            <div >
             {
-                materias.map(materia => <h3 key={materia.id} onClick={getInfoMateria(materia.id)}>{materia.nome}</h3>)
+                materias.map(materia => <h3 key={materia.id} onClick={() => getInfoMateria(materia.id)}>{materia.nome}</h3>)
             }
             </div>
             {
                 infoMateria &&
                 <>
                     <h2>{infoMateria.nome}</h2>
-                    { infoMateria.alunos.map(aluno => <p key={aluno.id}>{aluno.nome}</p>)}
+                    { infoMateria.alunos.map(aluno => <p key={aluno.id} onClick={() => setAlunoSelecionado(aluno)}>{aluno.nome}</p>)}
                     <p>{infoMateria.professor.nome}</p>
                 </>
             }
-            <div className="buttonDiv">
-                <button class="buttonCriar" onClick={() => setIsModalVisible(true)}>
-                    <text> ADICIONAR ALUNO</text>
-                </button>
-                <button class="buttonCriar" onClick={() => setIsModalAlunoVisible(true)}>
-                    <text> ADICONAR PROFESSOR</text>
-                </button>
-            </div>
+            {
+                alunoSelecionado &&
+                <Modal>
+                    <p>{alunoSelecionado.nome}</p>
+                    <table>
+                        <thead>
+                            <th>Bimestre</th>
+                            <th>Nota 01</th>
+                            <th>Nota 02</th>
+                            <th>Nota 03</th>
+                            <th>Nota 04</th>
+                            <th>Média</th>
+                            <th>Frequência</th>
+                        </thead>
+                        <tbody>
+                            <td>1 º Bimestre</td>
+                            
+                        </tbody>
+                    </table>
+                </Modal>                
+            }
+
+            
         </div>
 
     );

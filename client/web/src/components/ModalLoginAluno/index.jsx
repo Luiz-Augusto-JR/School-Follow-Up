@@ -1,10 +1,15 @@
 import { Modal } from "../Modal";
 import "./styles.css";
 
-export function ModalLogin({ closeModal }) {
+export function ModalLoginAluno ({ closeModal }) {
     return (
         <Modal closeModal={closeModal}>
             <form className="form-login">
+                <label>
+                    Selecione a Matéria
+                </label>
+                <select className="selectMateria" name="Matéria">
+                </select>
                 <label>
                     Nome
                 </label>
@@ -21,7 +26,7 @@ export function ModalLogin({ closeModal }) {
                     Confirmar senha
                 </label>
                 <input className="inputModal" type="text" />
-                <button className="buttonCriar"  >Enviar</button>
+                <button className="criarAlunoProfessor" > ENVIAR</button>
             </form>
         </Modal>
     );

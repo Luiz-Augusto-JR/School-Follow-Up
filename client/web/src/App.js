@@ -3,13 +3,13 @@ import './App.css';
 import { LoginPage } from './pages/LoginPage';
 import { HomeProfessores } from './pages/HomeProfessores';
 import { AdminHome } from './pages/AdminHome';
-import { Materias } from './pages/Materias';
 import { TesteQR } from './pages/TesteQR';
+import { Materias } from './pages/Materias';
 
 function App() {
     return ( 
-    <div> 
-        <LoginPage />
+    <div>
+        <Materias />
     </div>
     );
 }
