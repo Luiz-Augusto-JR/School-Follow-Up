@@ -11,7 +11,6 @@ export function Td({ text, customStyle }) {
     );
 }
 
-
 export function FrequenciaScreen() {
     const { authActions } = useAuth();
 
