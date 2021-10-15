@@ -74,18 +74,18 @@ export function Materias() {
             <div className="AlunosEProfessoresfont">
             <h2>Alunos E Professores</h2>
             </div>
-            <div >
+            <div className="todasMaterias">
             {
                 materias.map(materia => <h3 key={materia.id} onClick={() => getInfoMateria(materia.id)}>{materia.nome}</h3>)
             }
             </div>
             {
                 infoMateria &&
-                <>
+                <div className="professoresAlunos">
                     <h2>{infoMateria.nome}</h2>
                     { infoMateria.alunos.map(aluno => <p key={aluno.id} onClick={() => setAlunoSelecionado(aluno)}>{aluno.nome}</p>)}
-                    <p>{infoMateria.professor.nome}</p>
-                </>
+                    <h2>{infoMateria.professor.nome}</h2>
+                </div>
             }
             {
                 alunoSelecionado &&
@@ -93,18 +93,13 @@ export function Materias() {
                     <p>{alunoSelecionado.nome}</p>
                     <table>
                         <thead>
-                            <th>Bimestre</th>
-                            <th>Nota 01</th>
+                            <th>alunoSelecionado.nota</th>
                             <th>Nota 02</th>
                             <th>Nota 03</th>
                             <th>Nota 04</th>
                             <th>Média</th>
                             <th>Frequência</th>
                         </thead>
-                        <tbody>
-                            <td>1 º Bimestre</td>
-                            
-                        </tbody>
                     </table>
                 </Modal>                
             }
