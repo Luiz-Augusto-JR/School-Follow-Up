@@ -45,19 +45,55 @@ async function getMateriasOfStudent(req, res, next) {
         next(error);
     }
 }
-async function getMateriasOfTeacher(req, res, next) {
-    const professorId = res.locals.userId;
+
+async function getMateriasAll(req, res, next) {
+    
     try {
-        const materias = await Materia.findAll({ where:  { professor_id: professorId } })
+        
+        const materias = await Materia.findAll()
+
         res.json(materias);
     } catch (error) {
         console.log(error);
         next(error);
     }
 }
+
+async function getMateriasOfTeacher(req, res, next) {
+    try {
+        const professorId = req.params.id;
+
+        const materias = await Materia.findAll({ where:  { professor_id: professorId } })
+        
+        res.status(204).json(materias);
+    } catch (error) {
+        console.log(error);
+        next(error);
+    }
+}
+
+async function deleteMateria(req, res, next) {
+    try {
+        const materiaId = req.params.id
+
+        const materiaFound = await Materia.findOne({ where: { id: materiaId } })
+        if (!materiaFound) {
+            throw new createHttpError(404, "materia não encontrada");
+        }
+
+        materiaFound.destroy()
+
+        res.status(200).end()
+    } catch (error) {
+        console.log(error)
+        next(error)
+    }
+}
 module.exports = {
     createMateria,
     getMateriasOfStudent,
-    getMateriasOfTeacher
+    getMateriasAll,
+    getMateriasOfTeacher,
+    deleteMateria
 
 }
