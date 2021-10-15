@@ -1,30 +1,35 @@
 import React, { useState } from 'react';
-import { StyleSheet, Text, TextInput, View, Button, Image, Alert } from 'react-native';
+import { StyleSheet, Text, TextInput, View, Button, Image, Alert, TouchableOpacity, ActivityIndicator } from 'react-native';
 import { useAuth } from '../context/AuthContext';
+import { MaterialIcons } from '@expo/vector-icons';
 
 
 export function LoginScreen() {
   const [email, setEmail] = useState("");
   const [senha, setSenha] = useState("");
+  const [isLoading, setIsLoading] = useState(false);
 
   const { authActions } = useAuth();
 
   async function handleSignIn() {
+    setIsLoading(true);
     try {
       await authActions.signIn(email, senha);
     } catch (error) {
       alert("Não foi possível fazer o login");
-    }
+      setIsLoading(false);
+    }    
   }
 
   return (
-    <View style={styles.container}>            
-      <Image
-        style={styles.stretch}
-        source={require('../assets/logo.png')}
-      />
-      <Text></Text>
-      <View style={styles.email}>
+    <View style={styles.container}>
+      <View style={styles.containerLogo}>
+        <Image
+          style={styles.logo}
+          source={require('../assets/logo.png')}
+        />
+      </View>
+      <View style={styles.containerInputs}>
 
         <TextInput
           style={styles.input}
@@ -38,7 +43,7 @@ export function LoginScreen() {
 
           <TextInput
             style={styles.input}
-            
+
             title="SENHA"
             placeholder="Digite a senha"
             value={senha}
@@ -46,18 +51,19 @@ export function LoginScreen() {
             secureTextEntry
           />
         </View>
-        </View> 
 
-        <Text> </Text>
-        <View style={styles.login}>
-
-          <Button
-            title="LOGIN"
-            onPress={handleSignIn}
-          />
-        </View>
-
-          
+        <TouchableOpacity 
+          style={[styles.button, isLoading && { backgroundColor: "#4e6470" }]} 
+          onPress={handleSignIn}
+          disabled={isLoading}
+        >          
+          { isLoading ?
+            <ActivityIndicator size="small" color="white" /> :
+            <MaterialIcons name="login" size={24} color="white" />
+          }
+          <Text style={styles.buttonText}>Entrar</Text>
+        </TouchableOpacity>
+      </View>
     </View>
 
   );
@@ -65,49 +71,46 @@ export function LoginScreen() {
 
 const styles = StyleSheet.create({
   container: {
-    flex: 2,
-    backgroundColor: '#1991d2',
-    alignItems: 'center',
+    flex: 1,
+    backgroundColor: '#1991d2',    
     justifyContent: 'center',
-
-  }, stretch: {
-    width: 250,
-    height: 250,
-    resizeMode: 'stretch',
-    borderRadius: 20,
-  
+    padding: 50
   },
-  Image: {
-    shadowColor: "black",
-    shadowRadius: 20
+  containerLogo: {
+    justifyContent: "center",
+    alignItems: "center",
+    marginBottom: 50
   },
-  email: {
-    width: "60%",
-    height: "15%"
-
-  },
-  senha: {
-  
-  },
-  login: {
-    backgroundColor: "#159dff",
-    width: "20%",
-    shadowColor: "black",
-    shadowRadius: 10,
-     alignItems: 'center',
-    justifyContent: 'center',
-    
+  logo: {
+    width: 200,
+    height: 200,
   },
   input: {
-    color: '#ffffff',
+    color: 'black',
     borderRadius: 10,
     textAlign: 'center',
-    backgroundColor: "#159dff",
+    backgroundColor: "#fff",
+    fontSize: 20,
     shadowColor: "black",
     shadowRadius: 5,
     shadowOpacity: 10,
-    height: 30,
-
-}
+    padding: 5
+  },
+  button: {
+    marginTop: 40,
+    backgroundColor: "#185070",
+    borderRadius: 5,
+    flexDirection: "row",
+    padding: 10,
+    alignItems: "center",
+    justifyContent: "center"
+  },
+  buttonText: {
+    marginLeft: 20,
+    color: "white",
+    fontSize: 22,
+    fontWeight: "bold",
+    textTransform: "uppercase",
+  }
 });
 

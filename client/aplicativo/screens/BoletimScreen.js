@@ -1,9 +1,11 @@
 import React, { useEffect, useState } from 'react';
-import { StyleSheet, Text, View, Button, Image, TouchableOpacity, ScrollView, Alert } from 'react-native';
+import { StyleSheet, Text, View, Button, Image, TouchableOpacity, ScrollView, Alert, FlatList } from 'react-native';
 import { FontAwesome5 } from '@expo/vector-icons';
 import { FontAwesome } from '@expo/vector-icons';
 import { MaterialCommunityIcons } from '@expo/vector-icons';
 import { api } from '../services/api';
+import { DataTable } from 'react-native-paper';
+import { Materia } from '../components/Materia';
 
 
 export function Td({ text, customStyle }) {
@@ -15,7 +17,7 @@ export function Td({ text, customStyle }) {
 export function BoletimScreen() {
     const [boletim, setBoletim] = useState([
         {
-            materia: "geografia",            
+            nome: "geografia",
             n1: 10,
             n2: 10,
             n3: 10,
@@ -23,7 +25,7 @@ export function BoletimScreen() {
             media: 10
         },
         {
-            materia: "matemática",
+            nome: "matemática",
             n1: 10,
             n2: 10,
             n3: 10,
@@ -45,81 +47,123 @@ export function BoletimScreen() {
     //     getBoletim();
     // }, []);
 
+    function renderMateria({ item }) {
+
+
+        return (
+            <Materia materia={item} />
+        )
+    }
+
     return (
         <ScrollView>
-        <View style={styles.container}>
             <Text style={styles.header}>BOLETIM</Text>
+            <View style={styles.container}>                
+                <FlatList 
+                    data={boletim}
+                    renderItem={renderMateria}
+                />
 
-            <View style={styles.tabela}>
-                <View style={styles.linhaTabela}>
-                    <Td customStyle={{ width: "30%" }} text="Matérias" />
-                    <Td text="1º BI" />
-                    <Td text="2º BI" />
-                    <Td text="3º BI" />
-                    <Td text="4º BI" />
-                    <Td text="Média Final" />
+                {/* <DataTable>
+                    <DataTable.Header>
+                        <DataTable.Title>Matéria</DataTable.Title>
+                        <DataTable.Title numeric>N1</DataTable.Title>
+                        <DataTable.Title numeric>N2</DataTable.Title>
+                        <DataTable.Title numeric>N3</DataTable.Title>
+                        <DataTable.Title numeric>N4</DataTable.Title>
+                        <DataTable.Title numeric>Média</DataTable.Title>
+                    </DataTable.Header>
+
+
+                    { boletim.map(materia => (
+                         <DataTable.Row>
+                            <DataTable.Cell style={{ fontSize: 10 }}>{materia.nome}</DataTable.Cell>
+                            <DataTable.Cell numeric>{materia.n1}</DataTable.Cell>
+                            <DataTable.Cell numeric>{materia.n2}</DataTable.Cell>
+                            <DataTable.Cell numeric>{materia.n3}</DataTable.Cell>
+                            <DataTable.Cell numeric>{materia.n4}</DataTable.Cell>
+                            <DataTable.Cell numeric>{materia.media}</DataTable.Cell>
+                        </DataTable.Row>
+                    ))}
+                   
+
+                    <DataTable.Row>
+                        <DataTable.Cell>Ice cream sandwich</DataTable.Cell>
+                        <DataTable.Cell numeric>237</DataTable.Cell>
+                        <DataTable.Cell numeric>8.0</DataTable.Cell>
+                    </DataTable.Row>
+                </DataTable> */}
+
+                {/* <View style={styles.tabela}>
+                    <View style={styles.linhaTabela}>
+                        <Td customStyle={{ width: "30%" }} text="Matérias" />
+                        <Td text="1º BI" />
+                        <Td text="2º BI" />
+                        <Td text="3º BI" />
+                        <Td text="4º BI" />
+                        <Td text="Média Final" />
+                    </View>
+                    {
+                        boletim.map(materia => (
+                            <View style={styles.linhaTabela}>
+                                <Td customStyle={{ width: "30%" }} text={materia.materia} />
+                                <Td text={materia.n1} />
+                                <Td text={materia.n2} />
+                                <Td text={materia.n3} />
+                                <Td text={materia.n4} />
+                                <Td text={materia.media} />
+                            </View>
+                        ))
+                    }
                 </View>
-                {
-                    boletim.map(materia => (
-                        <View style={styles.linhaTabela}>
-                            <Td customStyle={{ width: "30%" }} text={materia.materia} />
-                            <Td text={materia.n1} />
-                            <Td text={materia.n2} />
-                            <Td text={materia.n3} />
-                            <Td text={materia.n4} />
-                            <Td text={materia.media} />
-                        </View>
-                    ))
-                }
+
+                <Text style={styles.titulo}>Frequência</Text>
+
+                <View style={styles.tabela}>
+                    <View style={styles.linhaTabela}>
+                        <Td customStyle={{ width: "30%" }} text="Matérias" />
+                        <Td text="Resultado" />
+                        <Td text="Frequência" />
+                    </View>
+                    <View style={styles.linhaTabela}>
+                        <Td customStyle={{ width: "30%" }} text="Geografia" />
+                        <Td text="APROVADO" />
+                        <Td text="100%" />
+
+                    </View>
+                    <View style={styles.linhaTabela}>
+                        <Td customStyle={{ width: "30%" }} text="Matemática" />
+                        <Td text="APROVADO" />
+                        <Td text="100%" />
+                    </View>
+                    <View style={styles.linhaTabela}>
+                        <Td customStyle={{ width: "30%" }} text="Portugues" />
+                        <Td text="APROVADO" />
+                        <Td text="100%" />
+                    </View>
+                    <View style={styles.linhaTabela}>
+                        <Td customStyle={{ width: "30%" }} text="Fisica" />
+                        <Td text="APROVADO" />
+                        <Td text="100%" />
+                    </View>
+                    <View style={styles.linhaTabela}>
+                        <Td customStyle={{ width: "30%" }} text="Biologia" />
+                        <Td text="APROVADO" />
+                        <Td text="100%" />
+                    </View>
+                    <View style={styles.linhaTabela}>
+                        <Td customStyle={{ width: "30%" }} text="Sociologia" />
+                        <Td text="APROVADO" />
+                        <Td text="100%" />
+                    </View>
+                    <View style={styles.linhaTabela}>
+                        <Td customStyle={{ width: "30%" }} text="Ingles" />
+                        <Td text="APROVADO" />
+                        <Td text="100%" />
+                    </View>
+                </View> */}
             </View>
-
-            <Text style={styles.titulo}>Frequência</Text>
-
-            <View style={styles.tabela}>
-                <View style={styles.linhaTabela}>
-                    <Td customStyle={{ width: "30%" }} text="Matérias" />
-                    <Td text="Resultado" />
-                    <Td text="Frequência" />
-                </View>
-                <View style={styles.linhaTabela}>
-                    <Td customStyle={{ width: "30%" }} text="Geografia" />
-                    <Td text="APROVADO" />
-                    <Td text="100%" />
-
-                </View>
-                <View style={styles.linhaTabela}>
-                    <Td customStyle={{ width: "30%" }} text="Matemática" />
-                    <Td text="APROVADO" />
-                    <Td text="100%" />
-                </View>
-                <View style={styles.linhaTabela}>
-                    <Td customStyle={{ width: "30%" }} text="Portugues" />
-                    <Td text="APROVADO" />
-                    <Td text="100%" />
-                </View>
-                <View style={styles.linhaTabela}>
-                    <Td customStyle={{ width: "30%" }} text="Fisica" />
-                    <Td text="APROVADO" />
-                    <Td text="100%" />
-                </View>
-                <View style={styles.linhaTabela}>
-                    <Td customStyle={{ width: "30%" }} text="Biologia" />
-                    <Td text="APROVADO" />
-                    <Td text="100%" />
-                </View>
-                <View style={styles.linhaTabela}>
-                    <Td customStyle={{ width: "30%" }} text="Sociologia" />
-                    <Td text="APROVADO" />
-                    <Td text="100%" />
-                </View>
-                <View style={styles.linhaTabela}>
-                    <Td customStyle={{ width: "30%" }} text="Ingles" />
-                    <Td text="APROVADO" />
-                    <Td text="100%" />
-                </View>
-            </View>
-        </View>
-    </ScrollView>
+        </ScrollView>
     );
 }
 
@@ -127,7 +171,7 @@ export function BoletimScreen() {
 const styles = StyleSheet.create({
     container: {
         flex: 1,
-        alignItems: "center",
+        padding: 20        
     },
     header: {
         fontSize: 20,
@@ -137,23 +181,6 @@ const styles = StyleSheet.create({
         marginBottom: 5,
         width: "100%",
         color: "white",
-        padding: 10
-    },
-    tabela: {
-        margin: 20
-    },
-    linhaTabela: {
-        flexDirection: "row",
-    },
-    td: {
-        borderWidth: 1,
-        textAlign: "center",
-        width: "16%",
-        padding: 5
-    },
-    notas: {
-        backgroundColor: 'blue',
-        width: "100%",
-        width: 100
-    },
+        paddingTop: 30
+    }
 });
