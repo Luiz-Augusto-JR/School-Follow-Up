@@ -40,7 +40,28 @@ async function getNotasOfStudent(req, res, next) {
     }
 }
 
+
+async function deleteNotasOfStundent(req, res, next) {
+    try {
+        const notaId = req.params.id
+
+        const notaFound = await nota.findOne({ where: { id: notaId } })
+        if (!notaFound) {
+            throw new createHttpError(404, "nota não encontrado");
+        }
+
+        notaFound.destroy()
+
+        res.status(200).end()
+    } catch (error) {
+        console.log(error)
+        next(error)
+    }
+}
+
+
 module.exports = {
     createNota,
-    getNotasOfStudent
+    getNotasOfStudent,
+    deleteNotasOfStundent
 }

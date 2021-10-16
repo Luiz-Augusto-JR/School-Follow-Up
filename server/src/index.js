@@ -18,6 +18,23 @@ app.use("/alunos", require("./routes/alunosRoutes"));
 app.use("/notas", require("./routes/notasRoutes"));
 app.use("/frequencias", require("./routes/frequenciaRoutes"));
 app.use("/auth", require("./routes/authRoutes"));
+/*
+    // Rotas da raiz "/"
+    app.get("/", (request, response) => {    
+        response.send("Bem vindo");
+    });
+
+    app.post("/", (request, response) => {
+        response.send("Método POST");
+    });
+
+    // app.put("/", (request, response) => {
+    //     response.send("Método PUT");
+    // });
+
+    app.delete("/", (request, response) => {
+        response.send("Método DELETE");
+});*/
 
 
 // Middleware de tratamento de erros

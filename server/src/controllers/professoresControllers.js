@@ -22,8 +22,37 @@ async function createProfessor(req, res, next) {
     }
 }
 
+async function getProfessor(req, res, next){
+    try {
+        const professorIdInDB = await Professor.findAll();
 
+        res.status(201).json(professorIdInDB)
+        
+    } catch (error) {
+        console.log(error)
+        next(error)
+    }
+}
+function deleteProfessor(req, res, next) {
+    // Obter o id dos parametros
+    const professorId = req.params.id;
+   
+    // Verificar se o professor com aquele id existe
+    const professorIdInDB = professorId.findIndex(professor => professor.id == professorId);
+
+    if (!professorIdInDB) {
+        return res.status(404).json({ message: "Professor not found" });
+    }
+
+    // Remover o professor do bd ()
+    professores.splice(professorIdInDB, 1);
+
+    res.status(204).end();
+}
 
 module.exports = {
-    createProfessor
+    createProfessor,
+    getProfessor,
+    deleteProfessor
+    
 }
