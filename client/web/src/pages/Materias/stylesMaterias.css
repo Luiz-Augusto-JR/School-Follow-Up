@@ -1,19 +1,72 @@
-html {
-    margin: 0px;
-    padding: 0px;
-    overflow-x: hidden;
-    overflow-y: scroll;
-    overflow: hidden;
-    background-image: linear-gradient(-100deg, #008AFF 50%, rgb(255, 255, 255) 50%);
-    height: 100vh;
+
+.todasMaterias{
+    position: absolute;
+    padding: 0;
+    left: 35px;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding-top: 15vh;
 }
 
-.bordaSuperior h1{
-    background-color: rgb(255, 255, 255);
-    color: rgb(0, 0, 0);
-    margin: 0px 0px 0px 0px;
-    padding-left: 20px;
-    box-shadow: 0px 5px 10px #777777;
+.todasMaterias h3{
+    padding-top: 20px;
+    text-transform: uppercase;
+    font-family: verdana;
+    font-size: 30px;
+    font-weight: 700;
+    color: #13293d;
+    margin: 0vh;
+    text-shadow: 1px 1px 1px #919191,
+        1px 2px 1px #919191,
+        1px 3px 1px #919191,
+        1px 4px 1px #919191,
+        1px 5px 1px #919191,
+        1px 6px 1px #919191,
+        1px 7px 1px #919191,
+        1px 8px 1px #919191,
+        1px 9px 1px #919191,
+        1px 10px 1px #919191,
+    1px 18px 6px rgba(16,16,16,0.4),
+    1px 22px 10px rgba(16,16,16,0.2),
+    1px 25px 35px rgba(16,16,16,0.2),
+    1px 30px 60px rgba(16,16,16,0.4);
+
+}
+.professoresAlunos{
+    position: absolute;
+    right: 40px;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding-top: 10vh;
+    text-transform: uppercase;
+    font-family: verdana;
+    font-size: 30px;
+    font-weight: 700;
+    color: #e8f1f2;
+    margin: 0vh;
+    text-shadow: 1px 1px 1px #919191,
+        1px 2px 1px #919191,
+        1px 3px 1px #919191,
+        1px 4px 1px #919191,
+        1px 5px 1px #919191,
+        1px 6px 1px #919191,
+        1px 7px 1px #919191,
+        1px 8px 1px #919191,
+        1px 9px 1px #919191,
+        1px 10px 1px #919191,
+    1px 18px 6px rgba(16,16,16,0.4),
+    1px 22px 10px rgba(16,16,16,0.2),
+    1px 25px 35px rgba(16,16,16,0.2),
+    1px 30px 60px rgba(16,16,16,0.4);
+}
+
+.professoresAlunos p{
+    padding: 0;
+    margin: 0;
 }
 
 .buttonDiv{
@@ -23,9 +76,10 @@ html {
 }
 
 
-.materias{    
+.materiasfont {    
     position: absolute;
-    left: 10px;
+    left: 30px;
+    top: 40px;
     padding: 0px;
     margin: 0vh;
     padding-top: 15px;
@@ -36,13 +90,13 @@ html {
 }
 
 
-.materias h2{
+.materiasfont h2{
         padding-bottom: 30px;
         text-transform: uppercase;
         font-family: verdana;
-        font-size: 70px;
+        font-size: 100px;
         font-weight: 700;
-        color: #0099ff;
+        color: #13293d;
         margin: 0vh;
         text-shadow: 1px 1px 1px #919191,
             1px 2px 1px #919191,
@@ -60,7 +114,7 @@ html {
         1px 30px 60px rgba(16,16,16,0.4);
   }
 
-.materias h3{
+.materiasfont h3{
     padding-top: 20px;
     text-transform: uppercase;
     font-family: verdana;
@@ -84,9 +138,43 @@ html {
     1px 30px 60px rgba(16,16,16,0.4);
 }
 
-  
+.AlunosEProfessoresfont {    
+    position: absolute;
+    right: 40px;
+    top: 65px;
+    padding: 0px;
+    margin: 0vh;
+    padding-top: 15px;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
 
 
+.AlunosEProfessoresfont h2{
+        padding-bottom: 30px;
+        text-transform: uppercase;
+        font-family: verdana;
+        font-size: 50px;
+        font-weight: 700;
+        color: #e8f1f2;
+        margin: 0vh;
+        text-shadow: 1px 1px 1px #919191,
+            1px 2px 1px #919191,
+            1px 3px 1px #919191,
+            1px 4px 1px #919191,
+            1px 5px 1px #919191,
+            1px 6px 1px #919191,
+            1px 7px 1px #919191,
+            1px 8px 1px #919191,
+            1px 9px 1px #919191,
+            1px 10px 1px #919191,
+        1px 18px 6px rgba(16,16,16,0.4),
+        1px 22px 10px rgba(16,16,16,0.2),
+        1px 25px 35px rgba(16,16,16,0.2),
+        1px 30px 60px rgba(16,16,16,0.4);
+  }
 
 .buttonCriar text{
     font-size: 18px;
