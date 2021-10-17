@@ -29,6 +29,78 @@ export function BoletimScreen() {
             n3: 10,
             n4: 10,
             media: 10
+        }, 
+        {
+            materia: "ingles",
+            n1: 10,
+            n2: 10,
+            n3: 10,
+            n4: 10,
+            media: 10
+        },
+        {
+            materia: "ed fisica",
+            n1: 10,
+            n2: 10,
+            n3: 10,
+            n4: 10,
+            media: 10
+        },
+        {
+            materia: "portugues",
+            n1: 10,
+            n2: 10,
+            n3: 10,
+            n4: 10,
+            media: 10
+        },
+        {
+            materia: "biologia",
+            n1: 10,
+            n2: 10,
+            n3: 10,
+            n4: 10,
+            media: 10
+        },
+        {
+            materia: "filosofia",
+            n1: 10,
+            n2: 10,
+            n3: 10,
+            n4: 10,
+            media: 10
+        },
+        {
+            materia: "artes",
+            n1: 10,
+            n2: 10,
+            n3: 10,
+            n4: 10,
+            media: 10
+        },
+        {
+            materia: "historia",
+            n1: 10,
+            n2: 10,
+            n3: 10,
+            n4: 10,
+            media: 10
+        },
+        {
+            materia: "fisica",
+            n1: 10,
+            n2: 10,
+            n3: 10,
+            n4: 10,
+            media: 10
+        },
+        {
+            materia: "sociologia",
+            n1: 10,
+            n2: 10,
+            n3: 10,
+            n4: 10,
+            media: 10
         }
     ]);
 
@@ -114,6 +186,26 @@ export function BoletimScreen() {
                 </View>
                 <View style={styles.linhaTabela}>
                     <Td customStyle={{ width: "30%" }} text="Ingles" />
+                    <Td text="APROVADO" />
+                    <Td text="100%" />
+                </View>
+                <View style={styles.linhaTabela}>
+                    <Td customStyle={{ width: "30%" }} text="Ed fisica" />
+                    <Td text="APROVADO" />
+                    <Td text="100%" />
+                </View>
+                <View style={styles.linhaTabela}>
+                    <Td customStyle={{ width: "30%" }} text="Filosofia" />
+                    <Td text="APROVADO" />
+                    <Td text="100%" />
+                </View>
+                <View style={styles.linhaTabela}>
+                    <Td customStyle={{ width: "30%" }} text="Artes" />
+                    <Td text="APROVADO" />
+                    <Td text="100%" />
+                </View>
+                <View style={styles.linhaTabela}>
+                    <Td customStyle={{ width: "30%" }} text="Historia" />
                     <Td text="APROVADO" />
                     <Td text="100%" />
                 </View>
