@@ -3,27 +3,27 @@ import React, { useEffect, useState } from "react";
 import { StyleSheet, Text, View, Button } from "react-native";
 import { api } from "../services/api";
 
-export function LeitorQrScreen() {
+export function LeitorQrScreen({ navigation }) {
     const [hasPermission, setHasPermission] = useState(null);
     const [scanned, setScanned] = useState(false);
 
     useEffect(() => {
         (async () => {
-        const { status } = await BarCodeScanner.requestPermissionsAsync();
-        setHasPermission(status === 'granted');
-        })();
+            const { status } = await BarCodeScanner.requestPermissionsAsync();
+            setHasPermission(status === 'granted');
+        })();        
     }, []);
 
     const handleBarCodeScanned = async ({ type, data }) => {
-        setScanned(true);
-        const frequenciaId = JSON.parse(data).id;
-
         try {
+            const frequenciaId = JSON.parse(data).id;
             await api.post(`/frequencias/${frequenciaId}`);
             alert("Presença registrada!");
+            setScanned(true);
+            navigation.navigate("Perfil");
         } catch (err) {
-            console.log(err);
-        }       
+            alert("Falha ao ler o QR-Code");
+        }
     };
 
     if (hasPermission === null) {
@@ -35,17 +35,16 @@ export function LeitorQrScreen() {
 
     return (
         <View style={styles.container}>
-        <BarCodeScanner
-            onBarCodeScanned={scanned ? undefined : handleBarCodeScanned}
-            style={StyleSheet.absoluteFillObject}
-        />
-        {scanned && <Button title={'Tap to Scan Again'} onPress={() => setScanned(false)} />}
+            <BarCodeScanner
+                onBarCodeScanned={scanned ? undefined : handleBarCodeScanned}
+                style={StyleSheet.absoluteFillObject}
+            />
         </View>
     )
 }
 
 const styles = StyleSheet.create({
-    container: { 
+    container: {
         flex: 1,
         backgroundColor: "grey"
     }

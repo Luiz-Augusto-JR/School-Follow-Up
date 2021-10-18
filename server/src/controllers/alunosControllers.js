@@ -22,6 +22,17 @@ async function createAluno(req, res, next) {
     }
 }
 
+ darlana
+async function getAluno(req, res, next) {
+    const alunoId = res.locals.userId;
+    try {
+       const aluno = await Aluno.findOne({ where: { id: alunoId }});
+
+       res.json(aluno);
+    } catch (error) {
+        console.log(error);
+        next(error);
+
 async function deleteAluno(req, res, next) {
     try {
         const userId = req.params.id
@@ -49,11 +60,15 @@ async function getAluno(req, res, next){
     } catch (error) {
         console.log(error)
         next(error)
+ main
     }
 }
 
 module.exports = {
     createAluno,
+ darlana
+
     deleteAluno,
+ main
     getAluno
 }
