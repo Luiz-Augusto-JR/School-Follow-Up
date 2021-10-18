@@ -1,0 +1,48 @@
+.form-login {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.form-login label {
+    color: #ffffff;
+    font-weight: bolder;
+    text-transform: uppercase;
+    font-size: 15px;
+}
+
+.inputModal{
+    font-weight: bolder;
+    padding: 10px 0px 0px;
+    box-shadow: inset 5px 5px 5px 0px rgba(0, 0, 0, 0.25);
+    border: none;
+}
+
+.selectMateria{
+    margin: 0px;
+    box-shadow: inset 5px 5px 5px 0px rgba(0, 0, 0, 0.25);
+    padding-top: 10px;
+    border: none;
+}
+.criarAlunoProfessor{
+    font-weight: bolder;
+    color: #00a2ff;
+    background-color: #ffffff;
+    height: 50px;
+    width: 190px;
+    position: relative;
+    border-radius: 20px;
+    box-shadow: 5px 10px 10px 0px rgba(0, 0, 0, 0.25);
+    cursor: pointer;
+    border: none;
+    margin-left: 120px;
+    margin-top: 20px;
+    margin-bottom: 10px;
+    box-shadow: 0px 5px #adadad;
+}
+.criarAlunoProfessor:active {
+    transform: translateY(4px);
+    box-shadow: 0px 0px #adadad;
+    
+}
