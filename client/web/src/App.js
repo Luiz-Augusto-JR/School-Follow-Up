@@ -9,7 +9,7 @@ import { Materias } from './pages/Materias';
 function App() {
     return ( 
     <div>
-        <LoginPage />
+        <AdminHome />
     </div>
     );
 }

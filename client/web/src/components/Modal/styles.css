@@ -15,7 +15,7 @@
     box-sizing: border-box;
     height: 450px;
     width: 500px;
-    background-image: linear-gradient(#00a2ff,#07a4ff);
+    background-color: #2d88ff;
     border-radius: 10px;
     display: flex;
     flex-direction: column;

@@ -1,11 +1,9 @@
 import { Modal } from "../Modal";
 import "./styles.css";
 import React, { useEffect, useState } from "react";
-import { api } from "../../../../web/src/services/api";
+import { api } from "../../services/api";
 
-export function ModalLoginProfessor({ closeModal }) {
-
-
+export function ModalCriarNotaAluno({ closeModal }) {
     return (
         <Modal closeModal={closeModal}>
             <form className="form-login">
@@ -15,22 +13,20 @@ export function ModalLoginProfessor({ closeModal }) {
                 <select className="selectMateria" name="Matéria">
                 </select>
                 <label>
-                    Nome
+                    selecione o aluno
                 </label>
-                <input className="inputModal" type="text" />
+                <select className="selectMateria" name="Matéria">
+                </select>
                 <label>
-                    E-mail
+                    Selecione a nota
                 </label>
-                <input className="inputModal" type="text" />
+                <select className="selectMateria" name="Matéria">
+                </select>
                 <label>
-                    Senha
+                    DIGITE A NOTA
                 </label>
                 <input className="inputModal" type="text" />
-                <label>
-                    Confirmar senha
-                </label>
-                <input className="inputModal" type="text" />
-                <button className="criarAlunoProfessor"> ENVIAR</button>
+                <button className="criarAlunoProfessor" > ENVIAR</button>
             </form>
         </Modal>
     );

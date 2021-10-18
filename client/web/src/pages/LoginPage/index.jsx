@@ -11,7 +11,7 @@ export function LoginPage() {
             <div className="login-logo">
                 <img src={gif} alt="logo" />
             </div>
-            <div className="caixa-login-right">
+            <div>
             <div className="login-right">
                 <h1>Entrar no School Follow-UP</h1>
 
