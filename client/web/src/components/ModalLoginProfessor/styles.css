@@ -6,37 +6,43 @@
 }
 
 .form-login label {
-    text-transform: uppercase; 
+    color: #ffffff;
+    font-weight: bolder;
+    text-transform: uppercase;
+    font-size: 15px;
 }
 
 .inputModal{
-    padding: 10px;
-    box-shadow: inset 5px 5px 5px 5px rgba(0, 0, 0, 0.25);
-}
-
-
-.buttonCriarModal{
-    margin: 0px;
-    padding-left: 100px;
-    padding-top: 30px;
+    font-weight: bolder;
+    padding: 10px 0px 0px;
+    box-shadow: inset 5px 5px 5px 0px rgba(0, 0, 0, 0.25);
+    border: none;
 }
 
 .selectMateria{
     margin: 0px;
-    box-shadow: inset 5px 5px 5px 5px rgba(0, 0, 0, 0.25);
-    padding-left: 100px;
-    padding-top: 20px;
+    box-shadow: inset 5px 5px 5px 0px rgba(0, 0, 0, 0.25);
+    padding-top: 10px;
+    border: none;
 }
 .criarAlunoProfessor{
-    background-color: #05FF00;
+    font-weight: bolder;
+    color: #00a2ff;
+    background-color: #ffffff;
     height: 50px;
     width: 190px;
+    position: relative;
     border-radius: 20px;
-    border: none;
     box-shadow: 5px 10px 10px 0px rgba(0, 0, 0, 0.25);
-    margin-top: 10px;
-    margin-left: 150px;
+    cursor: pointer;
+    border: none;
+    margin-left: 120px;
+    margin-top: 20px;
+    margin-bottom: 10px;
+    box-shadow: 0px 5px #adadad;
 }
 .criarAlunoProfessor:active {
     transform: translateY(4px);
+    box-shadow: 0px 0px #adadad;
+    
 }

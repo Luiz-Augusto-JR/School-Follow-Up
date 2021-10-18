@@ -16,14 +16,12 @@ export function LoginPage() {
                 <h1>Entrar no School Follow-UP</h1>
 
                 <div className="loginInputEmail">
-                    <input size="50" type={Text}
-                        placeholder="digite seu email"
+                    <input placeholder="digite seu email"
                     />
                 </div>
 
                 <div className="loginInputPassword">
-                    <input size="50"type={Text}
-                        placeholder="digite sua senha"
+                    <input placeholder="digite sua senha"
                     />
                 </div>
 

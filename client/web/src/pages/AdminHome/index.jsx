@@ -25,16 +25,14 @@ export function AdminHome() {
             <div className="bordaSuperior">
                 <h1>BEM-VINDO AO SCHOOL FOLLOW-UP!</h1>
             </div>
-            <div className="buttonDiv">
+            <div className="divMaterias">
                 <button class="buttonCriar" onClick={() => setIsModalLoginAlunoVisible(true)}>
                     <text> CRIAR LOGIN ALUNOS</text>
                 </button>
                 <button class="buttonCriar" onClick={() => setIsModalLoginProfessorVisible(true)}>
                     <text> CRIAR LOGIN PROFESSORES</text>
                 </button>
-            </div>
-            <div className="divMaterias">
-                <button class="buttonMaterias"><text>MATÉRIAS</text></button>
+                <button class="buttonCriar"><text>MATÉRIAS</text></button>
             </div>
             <div className="home-logo">
                 <img src={gif} alt="logo" />

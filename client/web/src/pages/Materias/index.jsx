@@ -8,12 +8,20 @@ export function Materias() {
     const [materias, setMaterias] = useState([
         {
             id: 1,
-            nome: materias.nome,
+            nome: "Matemática",
             alunos: [
                 { id: 1, nome: "Aluno 01" },
                 { id: 2, nome: "Aluno 02" },
+                { id: 3, nome: "Aluno 03" },
+                { id: 4, nome: "Aluno 04" },
+                { id: 5, nome: "Aluno 05" },
+                { id: 6, nome: "Aluno 06" },
+                { id: 7, nome: "Aluno 07" },
+                { id: 8, nome: "Aluno 08" },
+                { id: 9, nome: "Aluno 09" },
+                { id: 10, nome: "Aluno 10" },
             ],
-            professor: { id: 1, nome: "Professor" }
+            professor: { id: 1, nome: "LUIZ" }
         },
         {
             id: 2,
@@ -21,8 +29,135 @@ export function Materias() {
             alunos: [
                 { id: 1, nome: "Aluno 01" },
                 { id: 2, nome: "Aluno 02" },
+                { id: 3, nome: "Aluno 03" },
+                { id: 4, nome: "Aluno 04" },
+                { id: 5, nome: "Aluno 05" },
+                { id: 6, nome: "Aluno 06" },
+                { id: 7, nome: "Aluno 07" },
+                { id: 8, nome: "Aluno 08" },
+                { id: 9, nome: "Aluno 09" },
+                { id: 10, nome: "Aluno 10" },
             ],
-            professor: { id: 1, nome: "Professor" }
+            professor: { id: 2, nome: "LUIZ" }
+        },
+        {
+            id: 3,
+            nome: "Inglês",
+            alunos: [
+                { id: 1, nome: "Aluno 01" },
+                { id: 2, nome: "Aluno 02" },
+                { id: 3, nome: "Aluno 03" },
+                { id: 4, nome: "Aluno 04" },
+                { id: 5, nome: "Aluno 05" },
+                { id: 6, nome: "Aluno 06" },
+                { id: 7, nome: "Aluno 07" },
+                { id: 8, nome: "Aluno 08" },
+                { id: 9, nome: "Aluno 09" },
+                { id: 10, nome: "Aluno 10" },
+            ],
+            professor: { id: 3, nome: "LUIZ" }
+        },
+        {
+            id: 4,
+            nome: "ED Física",
+            alunos: [
+                { id: 1, nome: "Aluno 01" },
+                { id: 2, nome: "Aluno 02" },
+                { id: 3, nome: "Aluno 03" },
+                { id: 4, nome: "Aluno 04" },
+                { id: 5, nome: "Aluno 05" },
+                { id: 6, nome: "Aluno 06" },
+                { id: 7, nome: "Aluno 07" },
+                { id: 8, nome: "Aluno 08" },
+                { id: 9, nome: "Aluno 09" },
+                { id: 10, nome: "Aluno 10" },
+            ],
+            professor: { id: 4, nome: "LUIZ" }
+        },
+        {
+            id: 5,
+            nome: "Português",
+            alunos: [
+                { id: 1, nome: "Aluno 01" },
+                { id: 2, nome: "Aluno 02" },
+                { id: 3, nome: "Aluno 03" },
+                { id: 4, nome: "Aluno 04" },
+                { id: 5, nome: "Aluno 05" },
+                { id: 6, nome: "Aluno 06" },
+                { id: 7, nome: "Aluno 07" },
+                { id: 8, nome: "Aluno 08" },
+                { id: 9, nome: "Aluno 09" },
+                { id: 10, nome: "Aluno 10" },
+            ],
+            professor: { id: 5, nome: "LUIZ" }
+        },
+        {
+            id: 6,
+            nome: "Ciências",
+            alunos: [
+                { id: 1, nome: "Aluno 01" },
+                { id: 2, nome: "Aluno 02" },
+                { id: 3, nome: "Aluno 03" },
+                { id: 4, nome: "Aluno 04" },
+                { id: 5, nome: "Aluno 05" },
+                { id: 6, nome: "Aluno 06" },
+                { id: 7, nome: "Aluno 07" },
+                { id: 8, nome: "Aluno 08" },
+                { id: 9, nome: "Aluno 09" },
+                { id: 10, nome: "Aluno 10" },
+            ],
+            professor: { id: 6, nome: "LUIZ" }
+        },
+        {
+            id: 7,
+            nome: "Filisofia",
+            alunos: [
+                { id: 1, nome: "Aluno 01" },
+                { id: 2, nome: "Aluno 02" },
+                { id: 3, nome: "Aluno 03" },
+                { id: 4, nome: "Aluno 04" },
+                { id: 5, nome: "Aluno 05" },
+                { id: 6, nome: "Aluno 06" },
+                { id: 7, nome: "Aluno 07" },
+                { id: 8, nome: "Aluno 08" },
+                { id: 9, nome: "Aluno 09" },
+                { id: 10, nome: "Aluno 10" },
+            ],
+            professor: { id: 7, nome: "LUIZ" }
+        },
+        {
+            id: 8,
+            nome: "Artes",
+            alunos: [
+                { id: 1, nome: "Aluno 01" },
+                { id: 2, nome: "Aluno 02" },
+                { id: 3, nome: "Aluno 03" },
+                { id: 4, nome: "Aluno 04" },
+                { id: 5, nome: "Aluno 05" },
+                { id: 6, nome: "Aluno 06" },
+                { id: 7, nome: "Aluno 07" },
+                { id: 8, nome: "Aluno 08" },
+                { id: 9, nome: "Aluno 09" },
+                { id: 10, nome: "Aluno 10" },
+            ],
+            professor: { id: 8, nome: "LUIZ" }
+        },
+        {
+            id: 9,
+            nome: "História",
+            alunos: [
+                { id: 1, nome: "Aluno 01" },
+                { id: 2, nome: "Aluno 02" },
+                { id: 3, nome: "Aluno 03" },
+                { id: 4, nome: "Aluno 04" },
+                { id: 5, nome: "Aluno 05" },
+                { id: 6, nome: "Aluno 06" },
+                { id: 7, nome: "Aluno 07" },
+                { id: 8, nome: "Aluno 08" },
+                { id: 9, nome: "Aluno 09" },
+                { id: 10, nome: "Aluno 10" },
+            ],
+            professor: { id: 9, nome: "LUIZ" }
         }
     ]);
 
@@ -45,8 +180,7 @@ export function Materias() {
     useEffect(() => {
         (async () => {
             try {
-                const professores = (await api.get("/professo")).data;
-                setMaterias(materias)
+                const professores = (await api.get("/professores")).data;
             } catch (error) {
                 console.log(error);
             }
@@ -92,17 +226,19 @@ export function Materias() {
             {
                 infoMateria &&
                 <div className="professoresAlunos">
-                    <h2>{infoMateria.nome}</h2>
+                    <h2>Alunos de {infoMateria.nome}:</h2>
                     {infoMateria.alunos.map(aluno => <p key={aluno.id} onClick={() => setAlunoSelecionado(aluno)}>{aluno.nome}</p>)}
-                    <h2>{infoMateria.professor.nome}</h2>
+                    <h2>Professores:</h2>
+                    <h3>{infoMateria.professor.nome}</h3>
                 </div>
             }
             {
                 alunoSelecionado &&
                 <Modal>
-                    <p>{alunoSelecionado.nome}</p>
+                    <p className="modalAluno">{alunoSelecionado.nome}</p>
+                    <br/>
                     <table>
-                        <thead>
+                        <thead className="modalAluno" >
                             <th>alunoSelecionado.nota</th>
                             <th>Nota 02</th>
                             <th>Nota 03</th>

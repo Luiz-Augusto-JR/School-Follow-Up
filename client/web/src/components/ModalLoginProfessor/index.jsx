@@ -1,7 +1,23 @@
 import { Modal } from "../Modal";
 import "./styles.css";
+import React, { useEffect, useState } from "react";
+import { api } from "../../../../web/src/services/api";
 
 export function ModalLoginProfessor({ closeModal }) {
+
+    useEffect(() => {
+        (async () => {
+            try {
+                const criarProfessor = (await api.put(`/alunos`)).data;
+            } catch (error) {
+                console.log(error);
+            }
+        })();
+    }, []);
+
+
+
+
     return (
         <Modal closeModal={closeModal}>
             <form className="form-login">
