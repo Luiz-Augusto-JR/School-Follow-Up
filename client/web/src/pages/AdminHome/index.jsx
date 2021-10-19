@@ -4,14 +4,15 @@ import gif from "../../assets/logoCortadaBranca.gif";
 import { ModalLoginAluno } from "../../components/ModalLoginAluno";
 import { ModalLoginProfessor } from "../../components/ModalLoginProfessor";
 import { ModalCriarNotaAluno } from "../../components/ModalCriarNotaAluno";
+import { ModalCadastrarMateria } from "../../components/ModalCadastrarMateria";
 
 
 
 export function AdminHome() {
     const [isModalLoginAlunoVisible, setIsModalLoginAlunoVisible] = useState(false);
     const [isModalLoginProfessorVisible, setIsModalLoginProfessorVisible] = useState(false);
-    const [isModalCriarNotaAlunoVisible, setIsModalCriarNotaAlunoVisible] = useState(false);
-
+    const [isModalCriarNotaAlunoVisible, setIsModalCriarNotaAlunoVisible] = useState(true);
+    const [isModalCriarMateriaVisible, setIsModalCriarMateriaVisible] = useState(false);
         
 
     
@@ -36,20 +37,26 @@ export function AdminHome() {
                     <button>Enviar</button>
                 </ModalCriarNotaAluno>
             }   
+
+            {
+                isModalCriarMateriaVisible &&
+                <ModalCadastrarMateria closeModal={() => setIsModalCriarMateriaVisible(false)} />                    
+
+            }
             <div className="bordaSuperior">
                 <h1>BEM-VINDO AO SCHOOL FOLLOW-UP!</h1>
             </div>
             <div className="divMaterias">
-                <button class="buttonCriar" onClick={() => setIsModalLoginAlunoVisible(true)}>
-                    <text> CRIAR LOGIN ALUNOS</text>
+                <button className="buttonCriar" onClick={() => setIsModalLoginAlunoVisible(true)}>
+                   CRIAR LOGIN ALUNOS
                 </button>
-                <button class="buttonCriar" onClick={() => setIsModalLoginProfessorVisible(true)}>
-                    <text> CRIAR LOGIN PROFESSORES</text>
+                <button className="buttonCriar" onClick={() => setIsModalLoginProfessorVisible(true)}>
+                    CRIAR LOGIN PROFESSORES
                 </button>
-                <button class="buttonCriar" onClick={() => setIsModalCriarNotaAlunoVisible(true)}>
-                    <text> ADICIONAR NOTAS</text>
+                <button className="buttonCriar" onClick={() => setIsModalCriarNotaAlunoVisible(true)}>
+                    ADICIONAR NOTAS
                 </button>
-                <button class="buttonCriar" id="demo"><text>MATÉRIAS</text></button>
+                <button className="buttonCriar" id="demo" onClick={() => setIsModalCriarMateriaVisible(true)}>CRIAR MATÉRIA</button>
             </div>
             <div className="home-logo">
                 <img src={gif} alt="logo" />

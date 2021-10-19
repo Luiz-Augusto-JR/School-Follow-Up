@@ -28,6 +28,8 @@
     background-color: rgb(255, 0, 0);
     box-shadow: 2px 2px 0px #6b6b6b9c;
     border: none;
+    height: 44px;
+    width: 44px;
 }
 
 .button-close-modal:active {

@@ -6,7 +6,7 @@
     padding: 0px;
 }
 
-.qrcode img {
+.qrcode canvas {
     position: absolute;
     top: 20vh;
     right: 10vh;

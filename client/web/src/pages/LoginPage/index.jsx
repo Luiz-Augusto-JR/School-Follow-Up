@@ -1,10 +1,24 @@
-import React from "react";
+import React, { useState } from "react";
 import "./stylesLoginPage.css";
 import gif from "../../assets/logoCortadaBranca.gif";
+import { useAuth } from "../../contexts/AuthContext";
 
 
 
 export function LoginPage() {
+    const [email, setEmail] = useState("");
+    const [password, setPassword] = useState("");
+
+    const { authActions } = useAuth();
+
+    async function handleLogin() {
+        try {
+            authActions.signIn(email, password);
+        } catch (error) {
+            alert(error.response.message);
+        }
+    }
+
     return (
         <div className="login">
 
@@ -16,16 +30,16 @@ export function LoginPage() {
                 <h1>Entrar no School Follow-UP</h1>
 
                 <div className="loginInputEmail">
-                    <input placeholder="digite seu email"
+                    <input placeholder="digite seu email" value={email} onChange={e => setEmail(e.target.value)}
                     />
                 </div>
 
                 <div className="loginInputPassword">
-                    <input placeholder="digite sua senha"
+                    <input placeholder="digite sua senha" value={password} onChange={e => setPassword(e.target.value)}
                     />
                 </div>
 
-                <button className="button" type="submit">
+                <button className="button" type="submit" onClick={handleLogin}>
                     <h2>ENTRAR</h2>
                 </button>
                 </div>

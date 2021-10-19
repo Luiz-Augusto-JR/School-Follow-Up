@@ -6,9 +6,8 @@ const alunosControllers = require("../controllers/alunosControllers");
 
 router.post("/", alunosControllers.createAluno);
 router.get("/me", authentication(["aluno"]), alunosControllers.getAluno);
-
+router.get("/boletim", authentication(["aluno"]), alunosControllers.getBoletim);
 router.delete("/:id", alunosControllers.deleteAluno);
-
-router.get("/", alunosControllers.getAluno)
+router.get("/", alunosControllers.getAllAlunos);
 
 module.exports = router;
