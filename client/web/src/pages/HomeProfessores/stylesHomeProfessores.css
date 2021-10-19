@@ -9,11 +9,15 @@
 .qrcode canvas {
     position: absolute;
     top: 20vh;
-    right: 10vh;
+    right: 40vh;
     margin: 0px;
     padding: 0px;
 }
 
+.qrcode{
+    position: relative;
+    top: 20px;
+}
 .qrcode h2 {
     position: absolute;
     top: 14vh;
@@ -24,8 +28,43 @@
 
 .qrcode h1 {
     position: absolute;
-    top: 10vh;
-    right: 28vh;
-    margin: 0px;
-    padding: 0px;
+    right: 10vh;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding-top: 10vh;
+    text-transform: uppercase;
+    font-family: verdana;
+    font-size: 23px;
+    font-weight: 700;
+    color: #e8f1f2;
+    margin: 0vh;
+    text-shadow: 1px 1px 1px #919191,
+        1px 2px 1px #919191,
+        1px 3px 1px #919191,
+        1px 4px 1px #919191,
+        1px 5px 1px #919191,
+        1px 6px 1px #919191,
+        1px 7px 1px #919191,
+        1px 8px 1px #919191,
+        1px 9px 1px #919191,
+        1px 10px 1px #919191,
+    1px 18px 6px rgba(16,16,16,0.4),
+    1px 22px 10px rgba(16,16,16,0.2),
+    1px 25px 35px rgba(16,16,16,0.2),
+    1px 30px 60px rgba(16,16,16,0.4);
+}
+
+.sair{
+    position: absolute;
+    top: 1px;
+    right: 1px;
+    align-self: flex-end;
+    color: rgb(255, 255, 255);
+    background-color: rgb(255, 0, 0);
+    box-shadow: 2px 2px 0px #6b6b6b9c;
+    border: none;
+    height: 70px;
+    width: 70px;
 }

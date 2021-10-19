@@ -41,7 +41,7 @@ export function SuperSearchbox({ users, addUser }) {
                         <button 
                             className="button filtered-data__button"
                             onClick={e => handleSubmit(e, user)}
-                        ><FaPlus size={22} color="white" /></button>
+                        ><FaPlus size={15} color="white" /></button>
                     </div>
                 ))                
             }                    

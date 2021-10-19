@@ -81,10 +81,10 @@ export function ModalCriarNotaAluno({ closeModal }) {
                 <select className="selectMateria" name="Matéria" value={bimestre} onChange={e => setBimestre(e.target.value)}>
                     {
                         <>
-                            <option value={1}>1o Bimestre</option>
-                            <option value={2}>2o Bimestre</option>
-                            <option value={3}>3o Bimestre</option>
-                            <option value={4}>4o Bimestre</option>
+                            <option value={1}>1ª Bimestre</option>
+                            <option value={2}>2ª Bimestre</option>
+                            <option value={3}>3ª Bimestre</option>
+                            <option value={4}>4ª Bimestre</option>
                         </>
                     }
                 </select>

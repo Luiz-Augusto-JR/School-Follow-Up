@@ -32,17 +32,17 @@ export function HomeProfessores() {
 
     return (
         <div>
-            <button onClick={() => authActions.signOut()}>Sair</button>
             <div className="home-logo">
                 <img src={gif} alt="logo" />
             </div>
             <div className="bordaSuperior">
                 <h1>BEM-VINDO AO SCHOOL FOLLOW-UP!</h1>
             </div>
+            <button className="sair" onClick={() => authActions.signOut()}>Sair</button>
             <div className="qrcode">
-                <h2>Escaneie o QRCODE para registrar presença na aula!
+                <h1>Escaneie o QRCODE para registrar presença na aula!
 
-                </h2>
+                </h1>
                 <canvas ref={canvasRef} />
             </div>
         </div>

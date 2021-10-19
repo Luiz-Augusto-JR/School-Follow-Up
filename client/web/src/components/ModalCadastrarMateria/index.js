@@ -77,17 +77,15 @@ export function ModalCadastrarMateria({ closeModal }) {
                     ))}
                 </select>                
                 <label>Selecionar os estudantes</label>
-                <SuperSearchbox 
+                <SuperSearchbox
                     users={alunos}
                     addUser={addStudentToClass}    
                 />
                 {
                     selectedStudents.map(aluno => (
-                        <div key={aluno.id} className="lista-alunos">
-                           <hr></hr>             
+                        <div key={aluno.id} className="lista-alunos">           
                             <p>{aluno.nome}</p>
-                            <button className="removerAluno" onClick={() => removerAluno(aluno.id)}>Remover aluno</button>
-                            <hr></hr>  
+                            <button className="removerAluno" onClick={() => removerAluno(aluno.id)}>Remover</button>
                         </div>
                     ))
                 }

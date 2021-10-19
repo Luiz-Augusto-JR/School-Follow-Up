@@ -14,7 +14,7 @@
     justify-content: space-between;
     align-items: center;
     border: 1px solid rgb(126, 126, 126);
-    border-top: none
+    border-top: none;
 }
 
 .filtered-data p {
@@ -22,17 +22,17 @@
 }
 
 .filtered-data__name {
-    font-size: 22px;
+    font-size: 15px;
     font-weight: bold;
 }
 
 .filtered-data__email {
-    font-weight: 300;
+    font-weight: 700;
 }
 
 .filtered-data__button {   
-    width: 44px;
-    height: 44px;  
-    box-sizing: border-box;   
-    margin: 0;
+    width: 30px;
+    left: 10px;
+    height: 20px;
+    padding: 10px;
 }

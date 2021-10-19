@@ -5,15 +5,16 @@ import { ModalLoginAluno } from "../../components/ModalLoginAluno";
 import { ModalLoginProfessor } from "../../components/ModalLoginProfessor";
 import { ModalCriarNotaAluno } from "../../components/ModalCriarNotaAluno";
 import { ModalCadastrarMateria } from "../../components/ModalCadastrarMateria";
+import { useAuth } from "../../contexts/AuthContext";
 
 
 
 export function AdminHome() {
     const [isModalLoginAlunoVisible, setIsModalLoginAlunoVisible] = useState(false);
     const [isModalLoginProfessorVisible, setIsModalLoginProfessorVisible] = useState(false);
-    const [isModalCriarNotaAlunoVisible, setIsModalCriarNotaAlunoVisible] = useState(true);
+    const [isModalCriarNotaAlunoVisible, setIsModalCriarNotaAlunoVisible] = useState(false);
     const [isModalCriarMateriaVisible, setIsModalCriarMateriaVisible] = useState(false);
-        
+    const { authActions } = useAuth(); 
 
     
 
@@ -46,12 +47,13 @@ export function AdminHome() {
             <div className="bordaSuperior">
                 <h1>BEM-VINDO AO SCHOOL FOLLOW-UP!</h1>
             </div>
+            <button className="sair" onClick={() => authActions.signOut()}>Sair</button>
             <div className="divMaterias">
-                <button className="buttonCriar" onClick={() => setIsModalLoginAlunoVisible(true)}>
-                   CRIAR LOGIN ALUNOS
-                </button>
                 <button className="buttonCriar" onClick={() => setIsModalLoginProfessorVisible(true)}>
                     CRIAR LOGIN PROFESSORES
+                </button>
+                <button className="buttonCriar" onClick={() => setIsModalLoginAlunoVisible(true)}>
+                   CRIAR LOGIN ALUNOS
                 </button>
                 <button className="buttonCriar" onClick={() => setIsModalCriarNotaAlunoVisible(true)}>
                     ADICIONAR NOTAS

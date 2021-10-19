@@ -47,11 +47,11 @@ export function ModalLoginProfessor({ closeModal }) {
                 <label>
                     Senha
                 </label>
-                <input className="inputModal" type="text" value={senha} onChange={e => setSenha(e.target.value)}/>
+                <input className="inputModal" type="password" value={senha} onChange={e => setSenha(e.target.value)}/>
                 <label>
                     Confirmar senha
                 </label>
-                <input className="inputModal" type="text" value={confirmarSenha} onChange={e => setConfirmarSenha(e.target.value)}/>
+                <input className="inputModal" type="password" value={confirmarSenha} onChange={e => setConfirmarSenha(e.target.value)}/>
                 <button className="criarAlunoProfessor"> ENVIAR</button>
             </form>
         </Modal>

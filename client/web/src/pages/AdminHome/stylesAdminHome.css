@@ -14,8 +14,10 @@
 
 .divMaterias{
     position: absolute;
-    right: 20px;
-    top: 80px;
+    right: 30vh;
+    top: 30vh;
+    width: 300px;
+    font-weight: bolder;
 }
 
 
