@@ -1,5 +1,5 @@
 import axios from "axios";
 
 export const api = axios.create({
-    baseURL: "http://10.10.204.181:3001"
+    baseURL: "https://school-follow-up-api.herokuapp.com"
 });

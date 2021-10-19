@@ -12,7 +12,7 @@ const Tab = createMaterialBottomTabNavigator();
 
 export function AppRoutes() {
   return (
-    <Tab.Navigator initialRouteName="Boletim">
+    <Tab.Navigator initialRouteName="LeitorQrScreen">
       <Tab.Screen
         name="Perfil"
         component={PerfilScreen}

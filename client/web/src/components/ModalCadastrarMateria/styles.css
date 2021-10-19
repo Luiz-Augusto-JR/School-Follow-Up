@@ -5,4 +5,37 @@
 
 .lista-alunos {
     display: flex;
+    text-transform: uppercase;
+    height: 30px;
+}
+
+.inputModal{
+    font-weight: bolder;
+    padding: 10px 0px 0px;
+    box-shadow: inset 5px 5px 5px 0px rgba(0, 0, 0, 0.25);
+    border: none;
+}
+
+
+.selectMateria{
+    margin: 0px;
+    box-shadow: inset 5px 5px 5px 0px rgba(0, 0, 0, 0.25);
+    padding-top: 10px;
+    border: none;
+}
+
+.removerAluno{
+    font-weight: bolder;
+    color: #ff0000;
+    background-color: #ffffff;
+    height: 20px;
+    position: relative;
+    border-radius: 20px;
+    box-shadow: 5px 10px 10px 0px rgba(0, 0, 0, 0.25);
+    cursor: pointer;
+    border: none;
+    margin-left: 120px;
+    margin-top: 20px;
+    margin-bottom: 10px;
+    box-shadow: 0px 5px #adadad;
 }

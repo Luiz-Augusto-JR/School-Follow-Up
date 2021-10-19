@@ -69,9 +69,9 @@ export function ModalCadastrarMateria({ closeModal }) {
         <Modal closeModal={closeModal}>
             <form className="form-cadastro-materia" onSubmit={criarMateria}>
                 <label>Nome da matéria</label>
-                <input value={nome} onChange={e => setNome(e.target.value)} />
+                <input className="inputModal" value={nome} onChange={e => setNome(e.target.value)} />
                 <label>Selecione o professor</label>
-                <select onChange={e => setProfessor(e.target.value)}>
+                <select className="selectMateria" onChange={e => setProfessor(e.target.value)}>
                     { professores.map(professor => (
                         <option key={professor.id} value={professor.id}>{professor.nome}</option>
                     ))}
@@ -83,13 +83,15 @@ export function ModalCadastrarMateria({ closeModal }) {
                 />
                 {
                     selectedStudents.map(aluno => (
-                        <div key={aluno.id} className="lista-alunos">                            
+                        <div key={aluno.id} className="lista-alunos">
+                           <hr></hr>             
                             <p>{aluno.nome}</p>
-                            <button onClick={() => removerAluno(aluno.id)}>Remover aluno</button>
+                            <button className="removerAluno" onClick={() => removerAluno(aluno.id)}>Remover aluno</button>
+                            <hr></hr>  
                         </div>
                     ))
                 }
-                <button>Cadastrar matéria</button>
+                <button className="criarAlunoProfessor">Cadastrar matéria</button>
             </form>            
         </Modal>
     )

@@ -82,9 +82,9 @@ export function ModalCriarNotaAluno({ closeModal }) {
                     {
                         <>
                             <option value={1}>1o Bimestre</option>
-                            <option value={2}>1o Bimestre</option>
-                            <option value={3}>1o Bimestre</option>
-                            <option value={4}>1o Bimestre</option>
+                            <option value={2}>2o Bimestre</option>
+                            <option value={3}>3o Bimestre</option>
+                            <option value={4}>4o Bimestre</option>
                         </>
                     }
                 </select>
