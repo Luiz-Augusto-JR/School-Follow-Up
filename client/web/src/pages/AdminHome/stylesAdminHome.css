@@ -15,7 +15,7 @@
 .divMaterias{
     position: absolute;
     right: 30vh;
-    top: 30vh;
+    top: 30vh;  
     width: 300px;
     font-weight: bolder;
 }
@@ -23,7 +23,7 @@
 
 .buttonCriar text{
     font-size: 18px;
-    font-weight: bolder;
+    font-weight: 500;
 }
 
 

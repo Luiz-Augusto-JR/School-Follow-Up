@@ -39,9 +39,9 @@ export function SuperSearchbox({ users, addUser }) {
                             <p className="filtered-data__email">{user.email}</p>                
                         </div>
                         <button 
-                            className="button filtered-data__button"
+                            className="filtered-data__button"
                             onClick={e => handleSubmit(e, user)}
-                        ><FaPlus size={15} color="white" /></button>
+                        ><FaPlus /></button>
                     </div>
                 ))                
             }                    
